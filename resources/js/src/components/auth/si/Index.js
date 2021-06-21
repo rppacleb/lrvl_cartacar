@@ -70,10 +70,10 @@ export const SI = () => {
         <Box height="100%" display="flex" justifyContent="center" alignItems="center" bgcolor="#ffffff">
             <Box display="flex" width="50%" height="50%" bgcolor="green" borderRadius={20}bgcolor="#e3e1f8">
                 <Box width="50%" height="100%" className={classes.bg}></Box>
-                <Box p={8} width="50%">
+                <Box p={7.5} width="50%">
                     <Box mb={3}>
                         <Typography className="f-30"><strong>CART</strong> A<strong>CAR</strong></Typography>
-                        <Typography className="f-14">Start using POFSIS with your existing account from . . .</Typography>
+                        <Typography className="f-15">Start using POFSIS with your existing account from . . .</Typography>
                     </Box>
                     <Box>
                         <Box className={classes.search} mb={2}>
