@@ -1,4 +1,4 @@
-import { Box, makeStyles, Typography, InputBase, Grid } from "@material-ui/core"
+import { Box, makeStyles, Typography, InputBase, Grid, Button } from "@material-ui/core"
 import { MailOutlineRounded as IMailOutline, VpnKeyRounded as IVpnKey, GTranslateRounded as IGTranslate, Facebook as IFacebook, DraftsRounded as IDrafts } from '@material-ui/icons';
 import * as Icon from 'react-feather';
 import AuthFB from 'react-facebook-login/dist/facebook-login-render-props'
@@ -70,7 +70,7 @@ export const SI = () => {
         <Box height="100%" display="flex" justifyContent="center" alignItems="center" bgcolor="#ffffff">
             <Box display="flex" width="50%" height="50%" bgcolor="green" borderRadius={20}bgcolor="#e3e1f8">
                 <Box width="50%" height="100%" className={classes.bg}></Box>
-                <Box p={10} width="50%">
+                <Box p={8} width="50%">
                     <Box mb={3}>
                         <Typography className="f-30"><strong>CART</strong> A<strong>CAR</strong></Typography>
                         <Typography className="f-14">Start using POFSIS with your existing account from . . .</Typography>
@@ -83,13 +83,14 @@ export const SI = () => {
                                 input: classes.inputInput,
                             }} inputProps={{ 'aria-label': 'search' }}   />
                         </Box>
-                        <Box className={classes.search}>
+                        <Box className={classes.search} mb={2}>
                             <Box className={classes.searchIcon} color="gray"><IVpnKey /></Box>
                             <InputBase width="100%" placeholder="Password" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }} inputProps={{ 'aria-label': 'search' }}   />
                         </Box>
+                        <Button variant="contained" color="primary" fullWidth>SIGNIN</Button>
                         <Box mb={2} mt={2} className="separator">OR</Box>
                         <Grid container spacing={1}>
                             <Grid item xs={4}>

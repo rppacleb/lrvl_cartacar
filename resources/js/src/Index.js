@@ -14,11 +14,11 @@ const pageTheme = createMuiTheme({
         },
 		primary: {
 			light: '#e9ebee',
-			main: '#FF7D00',
+			main: '#8a82d8',
 		},
 		secondary: {
 			light: '#ffffff',
-			main: '#ffb347',
+			main: '#e3e1f8',
 			dark: '#f2f5fa'
 		},
 		error: {
