@@ -1,0 +1,685 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+/* body {
+    background-color: #e9ebee !important;
+    font-family: "Poppins", sans-serif !important;
+} */
+
+.personal-logo {
+    width: 7rem;
+    max-width: 7rem;
+    height: 7rem;
+    max-height: 7rem;
+    margin-top: -5rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-speck {
+    width: 1.4rem;
+    max-width: 1.4rem;
+    height: 1.4rem;
+    max-height: 1.4rem;
+    margin-top: -1.4rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-xs {
+    width: 3rem;
+    max-width: 3rem;
+    height: 3rem;
+    max-height: 3rem;
+    margin-top: -3rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-sm {
+    width: 5rem;
+    max-width: 5rem;
+    height: 5rem;
+    max-height: 5rem;
+    margin-top: -5rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-lg {
+    width: 10rem;
+    max-width: 10rem;
+    height: 10rem;
+    max-height: 10rem;
+    margin-top: -6rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-xl {
+    width: 13rem;
+    max-width: 13rem;
+    height: 13rem;
+    max-height: 13rem;
+    margin-top: -5rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-xxl {
+    width: 18rem;
+    max-width: 18rem;
+    height: 18rem;
+    max-height: 18rem;
+    margin-top: -5rem;
+    border: 3px solid #fff;
+    border-radius: 10%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center
+}
+
+.personal-logo-flat-top {
+    margin-top: 0 !important
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important
+}
+
+.shadow-none {
+    box-shadow: none !important
+}
+
+.w-25 {
+    width: 25% !important
+}
+
+
+.f-sm-7 {
+    font-size: 7px !important
+}
+
+.f-8 {
+    font-size: 8px !important
+}
+
+.f-9 {
+    font-size: 9px !important
+}
+
+.f-10 {
+    font-size: 10px !important
+}
+
+.f-11 {
+    font-size: 11px !important
+}
+
+.f-12 {
+    font-size: 12px !important
+}
+
+.f-13 {
+    font-size: 13px !important
+}
+
+.f-14 {
+    font-size: 14px !important
+}
+
+.f-15 {
+    font-size: 15px !important
+}
+
+.f-16 {
+    font-size: 16px !important
+}
+
+.f-17 {
+    font-size: 17px !important
+}
+
+.f-18 {
+    font-size: 18px !important
+}
+
+.f-19 {
+    font-size: 19px !important
+}
+
+.f-20 {
+    font-size: 20px !important
+}
+
+.f-21 {
+    font-size: 21px !important
+}
+
+.f-22 {
+    font-size: 22px !important
+}
+
+.f-23 {
+    font-size: 23px !important
+}
+
+.f-24 {
+    font-size: 24px !important
+}
+
+.f-25 {
+    font-size: 25px !important
+}
+
+.f-26 {
+    font-size: 26px !important
+}
+
+.f-27 {
+    font-size: 27px !important
+}
+
+.f-28 {
+    font-size: 28px !important
+}
+
+.f-29 {
+    font-size: 29px !important
+}
+
+.f-30 {
+    font-size: 30px !important
+}
+
+.f-40 {
+    font-size: 40px !important
+}
+
+.f-50 {
+    font-size: 50px !important
+}
+
+.f-60 {
+    font-size: 60px !important
+}
+
+@media (min-width: 576px) {
+    .f-sm-7 {
+        font-size: 7px !important
+    }
+    
+    .f-sm-8 {
+        font-size: 8px !important
+    }
+    
+    .f-sm-9 {
+        font-size: 9px !important
+    }
+    
+    .f-sm-10 {
+        font-size: 10px !important
+    }
+    
+    .f-sm-11 {
+        font-size: 11px !important
+    }
+    
+    .f-sm-12 {
+        font-size: 12px !important
+    }
+    
+    .f-sm-13 {
+        font-size: 13px !important
+    }
+    
+    .f-sm-14 {
+        font-size: 14px !important
+    }
+    
+    .f-sm-15 {
+        font-size: 15px !important
+    }
+    
+    .f-sm-16 {
+        font-size: 16px !important
+    }
+    
+    .f-sm-17 {
+        font-size: 17px !important
+    }
+    
+    .f-sm-18 {
+        font-size: 18px !important
+    }
+    
+    .f-sm-19 {
+        font-size: 19px !important
+    }
+    
+    .f-sm-20 {
+        font-size: 20px !important
+    }
+    
+    .f-sm-21 {
+        font-size: 21px !important
+    }
+    
+    .f-sm-22 {
+        font-size: 22px !important
+    }
+    
+    .f-sm-23 {
+        font-size: 23px !important
+    }
+    
+    .f-sm-24 {
+        font-size: 24px !important
+    }
+    
+    .f-sm-25 {
+        font-size: 25px !important
+    }
+    
+    .f-sm-26 {
+        font-size: 26px !important
+    }
+    
+    .f-sm-27 {
+        font-size: 27px !important
+    }
+    
+    .f-sm-28 {
+        font-size: 28px !important
+    }
+    
+    .f-sm-29 {
+        font-size: 29px !important
+    }
+    
+    .f-sm-30 {
+        font-size: 30px !important
+    }
+
+    .f-sm-40 {
+        font-size: 40px !important
+    }
+    
+    .f-sm-50 {
+        font-size: 50px !important
+    }
+    
+    .f-sm-60 {
+        font-size: 60px !important
+    }
+}
+
+@media (min-width: 768px) {
+    .f-md-7 {
+        font-size: 7px !important
+    }
+    
+    .f-md-8 {
+        font-size: 8px !important
+    }
+    
+    .f-md-9 {
+        font-size: 9px !important
+    }
+    
+    .f-md-10 {
+        font-size: 10px !important
+    }
+    
+    .f-md-11 {
+        font-size: 11px !important
+    }
+    
+    .f-md-12 {
+        font-size: 12px !important
+    }
+    
+    .f-md-13 {
+        font-size: 13px !important
+    }
+    
+    .f-md-14 {
+        font-size: 14px !important
+    }
+    
+    .f-md-15 {
+        font-size: 15px !important
+    }
+    
+    .f-md-16 {
+        font-size: 16px !important
+    }
+    
+    .f-md-17 {
+        font-size: 17px !important
+    }
+    
+    .f-md-18 {
+        font-size: 18px !important
+    }
+    
+    .f-md-19 {
+        font-size: 19px !important
+    }
+    
+    .f-md-20 {
+        font-size: 20px !important
+    }
+    
+    .f-md-21 {
+        font-size: 21px !important
+    }
+    
+    .f-md-22 {
+        font-size: 22px !important
+    }
+    
+    .f-md-23 {
+        font-size: 23px !important
+    }
+    
+    .f-md-24 {
+        font-size: 24px !important
+    }
+    
+    .f-md-25 {
+        font-size: 25px !important
+    }
+    
+    .f-md-26 {
+        font-size: 26px !important
+    }
+    
+    .f-md-27 {
+        font-size: 27px !important
+    }
+    
+    .f-md-28 {
+        font-size: 28px !important
+    }
+    
+    .f-md-29 {
+        font-size: 29px !important
+    }
+    
+    .f-md-30 {
+        font-size: 30px !important
+    }
+
+    .f-md-40 {
+        font-size: 40px !important
+    }
+    
+    .f-md-50 {
+        font-size: 50px !important
+    }
+    
+    .f-md-60 {
+        font-size: 60px !important
+    }
+}
+
+@media (min-width: 992px) {
+    .f-lg-7 {
+        font-size: 7px !important
+    }
+    
+    .f-lg-8 {
+        font-size: 8px !important
+    }
+    
+    .f-lg-9 {
+        font-size: 9px !important
+    }
+    
+    .f-lg-10 {
+        font-size: 10px !important
+    }
+    
+    .f-lg-11 {
+        font-size: 11px !important
+    }
+    
+    .f-lg-12 {
+        font-size: 12px !important
+    }
+    
+    .f-lg-13 {
+        font-size: 13px !important
+    }
+    
+    .f-lg-14 {
+        font-size: 14px !important
+    }
+    
+    .f-lg-15 {
+        font-size: 15px !important
+    }
+    
+    .f-lg-16 {
+        font-size: 16px !important
+    }
+    
+    .f-lg-17 {
+        font-size: 17px !important
+    }
+    
+    .f-lg-18 {
+        font-size: 18px !important
+    }
+    
+    .f-lg-19 {
+        font-size: 19px !important
+    }
+    
+    .f-lg-20 {
+        font-size: 20px !important
+    }
+    
+    .f-lg-21 {
+        font-size: 21px !important
+    }
+    
+    .f-lg-22 {
+        font-size: 22px !important
+    }
+    
+    .f-lg-23 {
+        font-size: 23px !important
+    }
+    
+    .f-lg-24 {
+        font-size: 24px !important
+    }
+    
+    .f-lg-25 {
+        font-size: 25px !important
+    }
+    
+    .f-lg-26 {
+        font-size: 26px !important
+    }
+    
+    .f-lg-27 {
+        font-size: 27px !important
+    }
+    
+    .f-lg-28 {
+        font-size: 28px !important
+    }
+    
+    .f-lg-29 {
+        font-size: 29px !important
+    }
+    
+    .f-lg-30 {
+        font-size: 30px !important
+    }
+
+    .f-lg-40 {
+        font-size: 40px !important
+    }
+    
+    .f-lg-50 {
+        font-size: 50px !important
+    }
+    
+    .f-lg-60 {
+        font-size: 60px !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .f-xl-7 {
+        font-size: 7px !important
+    }
+    
+    .f-xl-8 {
+        font-size: 8px !important
+    }
+    
+    .f-xl-9 {
+        font-size: 9px !important
+    }
+    
+    .f-xl-10 {
+        font-size: 10px !important
+    }
+    
+    .f-xl-11 {
+        font-size: 11px !important
+    }
+    
+    .f-xl-12 {
+        font-size: 12px !important
+    }
+    
+    .f-xl-13 {
+        font-size: 13px !important
+    }
+    
+    .f-xl-14 {
+        font-size: 14px !important
+    }
+    
+    .f-xl-15 {
+        font-size: 15px !important
+    }
+    
+    .f-xl-16 {
+        font-size: 16px !important
+    }
+    
+    .f-xl-17 {
+        font-size: 17px !important
+    }
+    
+    .f-xl-18 {
+        font-size: 18px !important
+    }
+    
+    .f-xl-19 {
+        font-size: 19px !important
+    }
+    
+    .f-xl-20 {
+        font-size: 20px !important
+    }
+    
+    .f-xl-21 {
+        font-size: 21px !important
+    }
+    
+    .f-xl-22 {
+        font-size: 22px !important
+    }
+    
+    .f-xl-23 {
+        font-size: 23px !important
+    }
+    
+    .f-xl-24 {
+        font-size: 24px !important
+    }
+    
+    .f-xl-25 {
+        font-size: 25px !important
+    }
+    
+    .f-xl-26 {
+        font-size: 26px !important
+    }
+    
+    .f-xl-27 {
+        font-size: 27px !important
+    }
+    
+    .f-xl-28 {
+        font-size: 28px !important
+    }
+    
+    .f-xl-29 {
+        font-size: 29px !important
+    }
+    
+    .f-xl-30 {
+        font-size: 30px !important
+    }
+
+    .f-xl-40 {
+        font-size: 40px !important
+    }
+    
+    .f-xl-50 {
+        font-size: 50px !important
+    }
+    
+    .f-xl-60 {
+        font-size: 60px !important
+    }
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+
+.separator::before {
+    margin-right: .25em;
+}
+
+.separator::after {
+    margin-left: .25em;
+}
