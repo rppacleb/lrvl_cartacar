@@ -20,7 +20,7 @@ export const request = (method, link, body='sd', qsp='') => {
 
         fetch(`${link}${qsp}`, param)
         .then(result => {
-            return resolve(result.json())
+            return resolve(result.text())
         })
         .catch(error => console.log('error', error));
     })

@@ -8757,15 +8757,385 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Box/Box.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/InputBase/InputBase.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/MailOutlineRounded.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/VpnKeyRounded.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/PhoneOutlined.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/GTranslateRounded.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/Facebook.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/DraftsRounded.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-facebook-login/dist/facebook-login-render-props */ "./node_modules/react-facebook-login/dist/facebook-login-render-props.js");
+/* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-google-login */ "./node_modules/react-google-login/dist/google-login.js");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_microsoft_login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-microsoft-login */ "./node_modules/react-microsoft-login/dist/index.js");
+/* harmony import */ var react_microsoft_login__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_microsoft_login__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _core_request_API__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../core/request/API */ "./resources/js/src/core/request/API.js");
+/* harmony import */ var _images_gif1_gif__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../images/gif1.gif */ "./resources/images/gif1.gif");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var style = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default)(function (theme) {
+  var _bg;
+
+  return {
+    bg: (_bg = {
+      backgroundPosition: 'center'
+    }, _defineProperty(_bg, theme.breakpoints.up('sm'), {
+      backgroundImage: "url(".concat(_images_gif1_gif__WEBPACK_IMPORTED_MODULE_6__.default, ")")
+    }), _defineProperty(_bg, "backgroundSize", '130%'), _defineProperty(_bg, "backgroundRepeat", 'no-repeat'), _defineProperty(_bg, "overflow", 'hidden'), _bg),
+    search: {
+      position: 'relative',
+      borderRadius: '10px',
+      padding: '3px 3px 3px 10px',
+      backgroundColor: '#f8f8fd',
+      marginLeft: 0,
+      width: '100%'
+    },
+    searchIcon: {
+      paddingBottom: theme.spacing(1.2),
+      height: '100%',
+      position: 'absolute',
+      pointerEvents: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    inputRoot: {
+      color: 'inherit'
+    },
+    inputInput: _defineProperty({
+      padding: theme.spacing(1, 1, 1, 0),
+      paddingLeft: "calc(1em + ".concat(theme.spacing(2), "px)"),
+      transition: theme.transitions.create('width'),
+      width: '100%'
+    }, theme.breakpoints.up('md'), {
+      width: '100%'
+    }),
+    button: {
+      cursor: 'pointer'
+    }
+  };
+});
+var Email = function Email() {
+  var classes = style();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    account: '',
+    password: ''
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      inputs = _useState2[0],
+      setInputs = _useState2[1];
+
+  var submitHandler = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var rqx;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              console.log(inputs);
+              _context.next = 3;
+              return (0,_core_request_API__WEBPACK_IMPORTED_MODULE_5__.request)('GET', "/api/auth/attempt/email", '', inputs);
+
+            case 3:
+              rqx = _context.sent;
+              console.log(rqx);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function submitHandler() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  var gResponse = function gResponse() {};
+
+  var fbResponse = function fbResponse() {};
+
+  var moResponse = function moResponse() {};
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    bgcolor: "#ffffff",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+      display: "flex",
+      alignItems: "center",
+      width: "750px",
+      height: "450px",
+      borderRadius: 20,
+      bgcolor: "#e3e1f8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+        width: "45%",
+        height: "100%",
+        className: classes.bg
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+        pl: 6.5,
+        pr: 6.5,
+        width: "55%",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+          mb: 3,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+            className: "f-30",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+              children: "CART"
+            }), "A", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+              children: "CAR"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+            className: "f-14",
+            children: "Email Signin"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            className: classes.search,
+            mb: 2,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+              className: classes.searchIcon,
+              color: "gray",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_11__.default, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
+              width: "100%",
+              placeholder: "Email",
+              classes: {
+                root: classes.inputRoot,
+                input: classes.inputInput
+              },
+              inputProps: {
+                'aria-label': 'Email'
+              },
+              onChange: function onChange(e) {
+                return setInputs(_objectSpread(_objectSpread({}, inputs), {}, {
+                  account: e.target.value
+                }));
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            className: classes.search,
+            mb: 2,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+              className: classes.searchIcon,
+              color: "gray",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_13__.default, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
+              type: "password",
+              width: "100%",
+              placeholder: "Password",
+              classes: {
+                root: classes.inputRoot,
+                input: classes.inputInput
+              },
+              inputProps: {
+                'aria-label': 'search'
+              },
+              onChange: function onChange(e) {
+                return setInputs(_objectSpread(_objectSpread({}, inputs), {}, {
+                  password: e.target.value
+                }));
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
+            variant: "contained",
+            color: "primary",
+            fullWidth: true,
+            onClick: submitHandler,
+            children: "SIGNIN"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            mb: 2,
+            mt: 2,
+            className: "separator",
+            children: "OR"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__.default, {
+            container: true,
+            spacing: 1,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+                to: "/si/mobile",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+                  display: "flex",
+                  mb: 0.5,
+                  justifyContent: "center",
+                  bgcolor: "#ffffff",
+                  p: 1.5,
+                  borderRadius: 10,
+                  className: classes.button,
+                  color: "black",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_17__.default, {
+                    style: {
+                      color: '#000000'
+                    }
+                  })
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_3___default()), {
+                clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
+                render: function render(props) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+                    display: "flex",
+                    justifyContent: "center",
+                    bgcolor: "#ffffff",
+                    p: 1.5,
+                    borderRadius: 10,
+                    onClick: props.onClick,
+                    className: classes.button,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_18__.default, {
+                      style: {
+                        color: '#c23829'
+                      }
+                    })
+                  });
+                },
+                buttonText: "Login",
+                onSuccess: gResponse,
+                onFailure: gResponse,
+                cookiePolicy: 'single_host_origin'
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2___default()), {
+                appId: "1132127907263808",
+                fields: "name,email,picture",
+                callback: fbResponse,
+                render: function render(props) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+                    display: "flex",
+                    justifyContent: "center",
+                    bgcolor: "#ffffff",
+                    p: 1.5,
+                    borderRadius: 10,
+                    onClick: props.onClick,
+                    className: classes.button,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_19__.default, {
+                      style: {
+                        color: '#549bc7'
+                      }
+                    })
+                  });
+                }
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_15__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react_microsoft_login__WEBPACK_IMPORTED_MODULE_4___default()), {
+                clientId: "05e56ff0-f31f-40f4-b327-8eff7efccdba",
+                authCallback: moResponse,
+                graphScopes: ['user.read', 'email'],
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+                  display: "flex",
+                  justifyContent: "center",
+                  bgcolor: "#ffffff",
+                  p: 1.5,
+                  borderRadius: 10,
+                  className: classes.button,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_20__.default, {
+                    style: {
+                      color: 'grey'
+                    }
+                  })
+                })
+              })
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+          mt: 2,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+            className: "f-12",
+            children: ["Don't have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Link, {
+              to: "/signup",
+              style: {
+                textDecoration: 'none',
+                color: '#443191'
+              },
+              children: "Signup"
+            })]
+          })
+        })]
+      })]
+    })
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/src/components/auth/si/Mobile.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/src/components/auth/si/Mobile.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Mobile": () => (/* binding */ Mobile)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Box/Box.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/InputBase/InputBase.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/MailOutlineRounded.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/PhoneOutlined.js");
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/VpnKeyRounded.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/PhoneOutlined.js");
+/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/MailOutlineRounded.js");
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/GTranslateRounded.js");
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/Facebook.js");
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/DraftsRounded.js");
@@ -8825,7 +9195,7 @@ var style = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default)(function 
     search: {
       position: 'relative',
       borderRadius: '10px',
-      padding: '5px 5px 5px 10px',
+      padding: '3px 3px 3px 10px',
       backgroundColor: '#f8f8fd',
       marginLeft: 0,
       width: '100%'
@@ -8855,9 +9225,7 @@ var style = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default)(function 
     }
   };
 });
-var Email = function Email() {
-  var _jsxs2;
-
+var Mobile = function Mobile() {
   var classes = style();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
@@ -8906,549 +9274,206 @@ var Email = function Email() {
     justifyContent: "center",
     alignItems: "center",
     bgcolor: "#ffffff",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, (_jsxs2 = {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
       display: "flex",
       alignItems: "center",
-      width: "50%",
-      height: "50%",
-      bgcolor: "green",
-      borderRadius: 20
-    }, _defineProperty(_jsxs2, "bgcolor", "#e3e1f8"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-      width: "50%",
-      height: "100%",
-      className: classes.bg
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-      pl: 6.5,
-      pr: 6.5,
-      width: "50%",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-        mb: 3,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-          className: "f-30",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
-            children: "CART"
-          }), " A", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
-            children: "CAR"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-          className: "f-14",
-          children: "Start using POFSIS with your existing account from . . ."
-        })]
+      width: "750px",
+      height: "450px",
+      borderRadius: 20,
+      bgcolor: "#e3e1f8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+        width: "45%",
+        height: "100%",
+        className: classes.bg
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+        pl: 6.5,
+        pr: 6.5,
+        width: "55%",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          className: classes.search,
-          mb: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-            className: classes.searchIcon,
-            color: "gray",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_10__.default, {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-            width: "100%",
-            placeholder: "Email",
-            classes: {
-              root: classes.inputRoot,
-              input: classes.inputInput
-            },
-            inputProps: {
-              'aria-label': 'Email'
-            },
-            onChange: function onChange(e) {
-              return setInputs(_objectSpread(_objectSpread({}, inputs), {}, {
-                account: e.event.target
-              }));
-            }
+          mb: 3,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            className: "f-30",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
+              children: "CART"
+            }), "A", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
+              children: "CAR"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            className: "f-14",
+            children: "Mobile Number Signin"
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          className: classes.search,
-          mb: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-            className: classes.searchIcon,
-            color: "gray",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_12__.default, {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-            type: "password",
-            width: "100%",
-            placeholder: "Password",
-            classes: {
-              root: classes.inputRoot,
-              input: classes.inputInput
-            },
-            inputProps: {
-              'aria-label': 'search'
-            },
-            onChange: function onChange(e) {
-              return setInputs(_objectSpread(_objectSpread({}, inputs), {}, {
-                password: e.event.target
-              }));
-            }
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            className: classes.search,
+            mb: 2,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+              className: classes.searchIcon,
+              color: "gray",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_10__.default, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+              width: "100%",
+              placeholder: "Mobile Number",
+              classes: {
+                root: classes.inputRoot,
+                input: classes.inputInput
+              },
+              inputProps: {
+                'aria-label': 'Mobile Number'
+              },
+              onChange: function onChange(e) {
+                return setInputs(_objectSpread(_objectSpread({}, inputs), {}, {
+                  account: e.event.target
+                }));
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            className: classes.search,
+            mb: 2,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+              className: classes.searchIcon,
+              color: "gray",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_12__.default, {})
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+              type: "password",
+              width: "100%",
+              placeholder: "Password",
+              classes: {
+                root: classes.inputRoot,
+                input: classes.inputInput
+              },
+              inputProps: {
+                'aria-label': 'search'
+              },
+              onChange: function onChange(e) {
+                return setInputs(_objectSpread(_objectSpread({}, inputs), {}, {
+                  password: e.event.target
+                }));
+              }
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__.default, {
+            variant: "contained",
+            color: "primary",
+            fullWidth: true,
+            onClick: submitHandler,
+            children: "SIGNIN"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            mb: 2,
+            mt: 2,
+            className: "separator",
+            children: "OR"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
+            container: true,
+            spacing: 1,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
+                to: "/si/email",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+                  display: "flex",
+                  mb: 0.5,
+                  justifyContent: "center",
+                  bgcolor: "#ffffff",
+                  p: 1.5,
+                  borderRadius: 10,
+                  className: classes.button,
+                  color: "black",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_16__.default, {
+                    style: {
+                      color: '#3ead8c'
+                    }
+                  })
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_3___default()), {
+                clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
+                render: function render(props) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+                    display: "flex",
+                    justifyContent: "center",
+                    bgcolor: "#ffffff",
+                    p: 1.5,
+                    borderRadius: 10,
+                    onClick: props.onClick,
+                    className: classes.button,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_17__.default, {
+                      style: {
+                        color: '#c23829'
+                      }
+                    })
+                  });
+                },
+                buttonText: "Login",
+                onSuccess: gResponse,
+                onFailure: gResponse,
+                cookiePolicy: 'single_host_origin'
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2___default()), {
+                appId: "1132127907263808",
+                fields: "name,email,picture",
+                callback: fbResponse,
+                render: function render(props) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+                    display: "flex",
+                    justifyContent: "center",
+                    bgcolor: "#ffffff",
+                    p: 1.5,
+                    borderRadius: 10,
+                    onClick: props.onClick,
+                    className: classes.button,
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_18__.default, {
+                      style: {
+                        color: '#549bc7'
+                      }
+                    })
+                  });
+                }
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
+              item: true,
+              xs: 3,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_microsoft_login__WEBPACK_IMPORTED_MODULE_4___default()), {
+                clientId: "05e56ff0-f31f-40f4-b327-8eff7efccdba",
+                authCallback: moResponse,
+                graphScopes: ['user.read', 'email'],
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+                  display: "flex",
+                  justifyContent: "center",
+                  bgcolor: "#ffffff",
+                  p: 1.5,
+                  borderRadius: 10,
+                  className: classes.button,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_19__.default, {
+                    style: {
+                      color: 'grey'
+                    }
+                  })
+                })
+              })
+            })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_13__.default, {
-          variant: "contained",
-          color: "primary",
-          fullWidth: true,
-          onClick: submitHandler,
-          children: "SIGNIN"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          mb: 2,
           mt: 2,
-          className: "separator",
-          children: "OR"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
-          container: true,
-          spacing: 1,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
-              to: "/si/mobile",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                display: "flex",
-                mb: 0.5,
-                alignItems: "center",
-                bgcolor: "#ffffff",
-                p: 1.5,
-                borderRadius: 10,
-                className: classes.button,
-                color: "black",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_16__.default, {
-                  style: {
-                    color: '#000000'
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                  ml: 1,
-                  className: "f-13",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
-                    children: "Mobile Number"
-                  })
-                })]
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_3___default()), {
-              clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
-              render: function render(props) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                  display: "flex",
-                  alignItems: "center",
-                  bgcolor: "#ffffff",
-                  p: 1.5,
-                  borderRadius: 10,
-                  onClick: props.onClick,
-                  className: classes.button,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_17__.default, {
-                    style: {
-                      color: '#3ead8c'
-                    }
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                    ml: 1,
-                    className: "f-13",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
-                      children: "Google"
-                    })
-                  })]
-                });
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            className: "f-12",
+            children: ["Don't have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
+              to: "/signup",
+              style: {
+                textDecoration: 'none',
+                color: '#443191'
               },
-              buttonText: "Login",
-              onSuccess: gResponse,
-              onFailure: gResponse,
-              cookiePolicy: 'single_host_origin'
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2___default()), {
-              appId: "1132127907263808",
-              fields: "name,email,picture",
-              callback: fbResponse,
-              render: function render(props) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                  display: "flex",
-                  alignItems: "center",
-                  bgcolor: "#ffffff",
-                  p: 1.5,
-                  borderRadius: 10,
-                  onClick: props.onClick,
-                  className: classes.button,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_18__.default, {
-                    style: {
-                      color: '#549bc7'
-                    }
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                    ml: 1,
-                    className: "f-13",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
-                      children: "Facebook"
-                    })
-                  })]
-                });
-              }
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_microsoft_login__WEBPACK_IMPORTED_MODULE_4___default()), {
-              clientId: "05e56ff0-f31f-40f4-b327-8eff7efccdba",
-              authCallback: moResponse,
-              graphScopes: ['user.read', 'email'],
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                display: "flex",
-                alignItems: "center",
-                bgcolor: "#ffffff",
-                p: 1.5,
-                borderRadius: 10,
-                className: classes.button,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_19__.default, {
-                  style: {
-                    color: 'grey'
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-                  ml: 1,
-                  className: "f-13",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("strong", {
-                    children: "Outlook"
-                  })
-                })]
-              })
-            })
-          })]
+              children: "Signup"
+            })]
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-        mt: 2,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-          className: "f-12",
-          children: ["Don't have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Link, {
-            to: "/signup",
-            style: {
-              textDecoration: 'none',
-              color: '#443191'
-            },
-            children: "Signup"
-          })]
-        })
       })]
-    })]), _jsxs2))
-  });
-};
-
-/***/ }),
-
-/***/ "./resources/js/src/components/auth/si/Mobile.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/src/components/auth/si/Mobile.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Mobile": () => (/* binding */ Mobile)
-/* harmony export */ });
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Box/Box.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/InputBase/InputBase.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/PhoneOutlined.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/VpnKeyRounded.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/MailOutlineRounded.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/GTranslateRounded.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/Facebook.js");
-/* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/icons */ "./node_modules/@material-ui/icons/esm/DraftsRounded.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-facebook-login/dist/facebook-login-render-props */ "./node_modules/react-facebook-login/dist/facebook-login-render-props.js");
-/* harmony import */ var react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-google-login */ "./node_modules/react-google-login/dist/google-login.js");
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_microsoft_login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-microsoft-login */ "./node_modules/react-microsoft-login/dist/index.js");
-/* harmony import */ var react_microsoft_login__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_microsoft_login__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _images_gif1_gif__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../images/gif1.gif */ "./resources/images/gif1.gif");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-
-
-
-
-
-
-var style = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default)(function (theme) {
-  var _bg;
-
-  return {
-    bg: (_bg = {
-      backgroundPosition: 'center'
-    }, _defineProperty(_bg, theme.breakpoints.up('sm'), {
-      backgroundImage: "url(".concat(_images_gif1_gif__WEBPACK_IMPORTED_MODULE_3__.default, ")")
-    }), _defineProperty(_bg, "backgroundSize", '130%'), _defineProperty(_bg, "backgroundRepeat", 'no-repeat'), _defineProperty(_bg, "overflow", 'hidden'), _bg),
-    search: {
-      position: 'relative',
-      borderRadius: '10px',
-      padding: '5px 5px 5px 10px',
-      backgroundColor: '#f8f8fd',
-      marginLeft: 0,
-      width: '100%'
-    },
-    searchIcon: {
-      paddingBottom: theme.spacing(1.2),
-      height: '100%',
-      position: 'absolute',
-      pointerEvents: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    },
-    inputRoot: {
-      color: 'inherit'
-    },
-    inputInput: _defineProperty({
-      padding: theme.spacing(1, 1, 1, 0),
-      paddingLeft: "calc(1em + ".concat(theme.spacing(2), "px)"),
-      transition: theme.transitions.create('width'),
-      width: '100%'
-    }, theme.breakpoints.up('md'), {
-      width: '100%'
-    }),
-    button: {
-      cursor: 'pointer'
-    }
-  };
-});
-var Mobile = function Mobile() {
-  var _jsxs2;
-
-  var classes = style();
-
-  var gResponse = function gResponse() {};
-
-  var fbResponse = function fbResponse() {};
-
-  var moResponse = function moResponse() {};
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    bgcolor: "#ffffff",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, (_jsxs2 = {
-      display: "flex",
-      alignItems: "center",
-      width: "50%",
-      height: "50%",
-      bgcolor: "green",
-      borderRadius: 20
-    }, _defineProperty(_jsxs2, "bgcolor", "#e3e1f8"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-      width: "50%",
-      height: "100%",
-      className: classes.bg
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-      pl: 6.5,
-      pr: 6.5,
-      width: "50%",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-        mb: 3,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
-          className: "f-30",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-            children: "CART"
-          }), " A", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-            children: "CAR"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
-          className: "f-14",
-          children: "Start using POFSIS with your existing account from . . ."
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-          className: classes.search,
-          mb: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-            className: classes.searchIcon,
-            color: "gray",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_8__.default, {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-            width: "100%",
-            placeholder: "Mobile Number",
-            classes: {
-              root: classes.inputRoot,
-              input: classes.inputInput
-            },
-            inputProps: {
-              'aria-label': 'Mobile Number'
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-          className: classes.search,
-          mb: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-            className: classes.searchIcon,
-            color: "gray",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_10__.default, {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-            type: "password",
-            width: "100%",
-            placeholder: "Password",
-            classes: {
-              root: classes.inputRoot,
-              input: classes.inputInput
-            },
-            inputProps: {
-              'aria-label': 'search'
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-          variant: "contained",
-          color: "primary",
-          fullWidth: true,
-          children: "SIGNIN"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-          mb: 2,
-          mt: 2,
-          className: "separator",
-          children: "OR"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
-          container: true,
-          spacing: 1,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Link, {
-              to: "/si/email",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                display: "flex",
-                mb: 0.5,
-                alignItems: "center",
-                bgcolor: "#ffffff",
-                p: 1.5,
-                borderRadius: 10,
-                className: classes.button,
-                color: "black",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_14__.default, {
-                  style: {
-                    color: '#000000'
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                  ml: 1,
-                  className: "f-13",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                    children: "Email"
-                  })
-                })]
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_1___default()), {
-              clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
-              render: function render(props) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                  display: "flex",
-                  alignItems: "center",
-                  bgcolor: "#ffffff",
-                  p: 1.5,
-                  borderRadius: 10,
-                  onClick: props.onClick,
-                  className: classes.button,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_15__.default, {
-                    style: {
-                      color: '#3ead8c'
-                    }
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                    ml: 1,
-                    className: "f-13",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                      children: "Google"
-                    })
-                  })]
-                });
-              },
-              buttonText: "Login",
-              onSuccess: gResponse,
-              onFailure: gResponse,
-              cookiePolicy: 'single_host_origin'
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default()), {
-              appId: "1132127907263808",
-              fields: "name,email,picture",
-              callback: fbResponse,
-              render: function render(props) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                  display: "flex",
-                  alignItems: "center",
-                  bgcolor: "#ffffff",
-                  p: 1.5,
-                  borderRadius: 10,
-                  onClick: props.onClick,
-                  className: classes.button,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_16__.default, {
-                    style: {
-                      color: '#549bc7'
-                    }
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                    ml: 1,
-                    className: "f-13",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                      children: "Facebook"
-                    })
-                  })]
-                });
-              }
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
-            item: true,
-            xs: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_microsoft_login__WEBPACK_IMPORTED_MODULE_2___default()), {
-              clientId: "05e56ff0-f31f-40f4-b327-8eff7efccdba",
-              authCallback: moResponse,
-              graphScopes: ['user.read', 'email'],
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                display: "flex",
-                alignItems: "center",
-                bgcolor: "#ffffff",
-                p: 1.5,
-                borderRadius: 10,
-                className: classes.button,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_17__.default, {
-                  style: {
-                    color: 'grey'
-                  }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                  ml: 1,
-                  className: "f-13",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                    children: "Outlook"
-                  })
-                })]
-              })
-            })
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-        mt: 2,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
-          className: "f-12",
-          children: ["Don't have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Link, {
-            to: "/signup",
-            style: {
-              textDecoration: 'none',
-              color: '#443191'
-            },
-            children: "Signup"
-          })]
-        })
-      })]
-    })]), _jsxs2))
+    })
   });
 };
 
@@ -9538,8 +9563,6 @@ var style = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default)(function 
   };
 });
 var Options = function Options() {
-  var _jsxs2;
-
   var classes = style();
 
   var gResponse = function gResponse() {};
@@ -9554,198 +9577,199 @@ var Options = function Options() {
     justifyContent: "center",
     alignItems: "center",
     bgcolor: "#ffffff",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, (_jsxs2 = {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
       display: "flex",
       alignItems: "center",
-      width: "50%",
-      height: "50%",
-      bgcolor: "green",
-      borderRadius: 20
-    }, _defineProperty(_jsxs2, "bgcolor", "#e3e1f8"), _defineProperty(_jsxs2, "children", [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-      width: "50%",
-      height: "100%",
-      className: classes.bg
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-      p: 6.5,
-      width: "50%",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-        mb: 3,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
-          className: "f-30",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-            children: "CART"
-          }), " A", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-            children: "CAR"
+      width: "750px",
+      height: "450px",
+      borderRadius: 20,
+      bgcolor: "#e3e1f8",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        width: "45%",
+        height: "100%",
+        className: classes.bg
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        p: 6.5,
+        width: "55%",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+          mb: 3,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
+            className: "f-25",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+              children: "CART"
+            }), "A", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+              children: "CAR"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
+            className: "f-12",
+            children: "Start using Cartacar with your existing account from . . ."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
-          className: "f-14",
-          children: "Start using POFSIS with your existing account from . . ."
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-        container: true,
-        spacing: 1,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          item: true,
-          xs: 12,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-            to: "/si/email",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-              display: "flex",
-              mb: 0.5,
-              alignItems: "center",
-              bgcolor: "#ffffff",
-              p: 1.5,
-              borderRadius: 10,
-              className: classes.button,
-              color: "black",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_10__.default, {
-                style: {
-                  color: '#3ead8c'
-                }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                ml: 1,
-                className: "f-13",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                  children: "Email"
-                })
-              })]
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          item: true,
-          xs: 12,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-            to: "/si/mobile",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-              display: "flex",
-              mb: 0.5,
-              alignItems: "center",
-              bgcolor: "#ffffff",
-              p: 1.5,
-              borderRadius: 10,
-              className: classes.button,
-              color: "black",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_11__.default, {
-                style: {
-                  color: '#000000'
-                }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                ml: 1,
-                className: "f-13",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                  children: "Mobile Number"
-                })
-              })]
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          item: true,
-          xs: 12,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_1___default()), {
-            clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
-            render: function render(props) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+          container: true,
+          spacing: 1,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+              to: "/si/email",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
                 display: "flex",
                 mb: 0.5,
                 alignItems: "center",
                 bgcolor: "#ffffff",
-                p: 1.5,
+                p: 1.3,
                 borderRadius: 10,
-                onClick: props.onClick,
                 className: classes.button,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_12__.default, {
+                color: "black",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_10__.default, {
                   style: {
-                    color: '#c23829'
+                    color: '#3ead8c'
                   }
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
                   ml: 1,
-                  className: "f-13",
+                  className: "f-12",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                    children: "Google"
+                    children: "Email"
                   })
                 })]
-              });
-            },
-            buttonText: "Login",
-            onSuccess: gResponse,
-            onFailure: gResponse,
-            cookiePolicy: 'single_host_origin'
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          item: true,
-          xs: 12,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default()), {
-            appId: "1132127907263808",
-            fields: "name,email,picture",
-            callback: fbResponse,
-            render: function render(props) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+              to: "/si/mobile",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
                 display: "flex",
                 mb: 0.5,
                 alignItems: "center",
                 bgcolor: "#ffffff",
-                p: 1.5,
+                p: 1.3,
                 borderRadius: 10,
-                onClick: props.onClick,
                 className: classes.button,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_13__.default, {
+                color: "black",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_11__.default, {
                   style: {
-                    color: '#549bc7'
+                    color: '#000000'
                   }
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
                   ml: 1,
-                  className: "f-13",
+                  className: "f-12",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                    children: "Facebook"
+                    children: "Mobile Number"
                   })
                 })]
-              });
-            }
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          item: true,
-          xs: 12,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_microsoft_login__WEBPACK_IMPORTED_MODULE_2___default()), {
-            clientId: "05e56ff0-f31f-40f4-b327-8eff7efccdba",
-            authCallback: moResponse,
-            graphScopes: ['user.read', 'email'],
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-              display: "flex",
-              mb: 0.5,
-              alignItems: "center",
-              bgcolor: "#ffffff",
-              p: 1.5,
-              borderRadius: 10,
-              className: classes.button,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_14__.default, {
-                style: {
-                  color: 'grey'
-                }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-                ml: 1,
-                className: "f-13",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
-                  children: "Outlook"
-                })
-              })]
+              })
             })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_1___default()), {
+              clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
+              render: function render(props) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+                  display: "flex",
+                  mb: 0.5,
+                  alignItems: "center",
+                  bgcolor: "#ffffff",
+                  p: 1.3,
+                  borderRadius: 10,
+                  onClick: props.onClick,
+                  className: classes.button,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_12__.default, {
+                    style: {
+                      color: '#c23829'
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+                    ml: 1,
+                    className: "f-12",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+                      children: "Google"
+                    })
+                  })]
+                });
+              },
+              buttonText: "Login",
+              onSuccess: gResponse,
+              onFailure: gResponse,
+              cookiePolicy: 'single_host_origin'
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default()), {
+              appId: "1132127907263808",
+              fields: "name,email,picture",
+              callback: fbResponse,
+              render: function render(props) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+                  display: "flex",
+                  mb: 0.5,
+                  alignItems: "center",
+                  bgcolor: "#ffffff",
+                  p: 1.3,
+                  borderRadius: 10,
+                  onClick: props.onClick,
+                  className: classes.button,
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_13__.default, {
+                    style: {
+                      color: '#549bc7'
+                    }
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+                    ml: 1,
+                    className: "f-12",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+                      children: "Facebook"
+                    })
+                  })]
+                });
+              }
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+            item: true,
+            xs: 12,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_microsoft_login__WEBPACK_IMPORTED_MODULE_2___default()), {
+              clientId: "05e56ff0-f31f-40f4-b327-8eff7efccdba",
+              authCallback: moResponse,
+              graphScopes: ['user.read', 'email'],
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+                display: "flex",
+                mb: 0.5,
+                alignItems: "center",
+                bgcolor: "#ffffff",
+                p: 1.3,
+                borderRadius: 10,
+                className: classes.button,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_14__.default, {
+                  style: {
+                    color: 'grey'
+                  }
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+                  ml: 1,
+                  className: "f-12",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+                    children: "Outlook"
+                  })
+                })]
+              })
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+          mt: 2,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
+            className: "f-12",
+            children: ["Don't have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+              to: "/signup",
+              style: {
+                textDecoration: 'none',
+                color: '#443191'
+              },
+              children: "Signup"
+            })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
-        mt: 2,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
-          className: "f-12",
-          children: ["Don't have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-            to: "/signup",
-            style: {
-              textDecoration: 'none',
-              color: '#443191'
-            },
-            children: "Signup"
-          })]
-        })
       })]
-    })]), _jsxs2))
+    })
   });
 };
 
@@ -9802,6 +9826,51 @@ var WebRoute = function WebRoute() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
       children: " 404 NOT FOUND "
     })]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/src/core/request/API.js":
+/*!**********************************************!*\
+  !*** ./resources/js/src/core/request/API.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "request": () => (/* binding */ request)
+/* harmony export */ });
+var request = function request(method, link) {
+  var body = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'sd';
+  var qsp = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  return new Promise(function (resolve) {
+    var h = new Headers();
+    h.append('Content-Type', 'application/json');
+    var param = {
+      method: method,
+      headers: h,
+      body: JSON.stringify(body),
+      redirect: 'follow'
+    };
+    body === '' && delete param.body;
+
+    if (qsp !== '') {
+      var subqsp = [];
+
+      for (var k in qsp) {
+        subqsp.push("".concat(k, "=").concat(qsp[k]));
+      }
+
+      qsp = "?".concat(subqsp.join('&'));
+    }
+
+    fetch("".concat(link).concat(qsp), param).then(function (result) {
+      return resolve(result.text());
+    })["catch"](function (error) {
+      return console.log('error', error);
+    });
   });
 };
 

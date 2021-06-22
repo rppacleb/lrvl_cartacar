@@ -6,6 +6,7 @@ import * as Icon from 'react-feather';
 import AuthFB from 'react-facebook-login/dist/facebook-login-render-props'
 import AuthG from 'react-google-login';
 import AuthMO from 'react-microsoft-login';
+import { request } from '../../../core/request/API';
 
 
 import gif1 from '../../../../../images/gif1.gif'
@@ -23,7 +24,7 @@ const style = makeStyles(theme => ({
     search: {
 		position: 'relative',
 		borderRadius: '10px',
-        padding: '5px 5px 5px 10px',
+        padding: '3px 3px 3px 10px',
         backgroundColor: '#f8f8fd',
 		marginLeft: 0,
 		width: '100%',
@@ -59,7 +60,9 @@ export const Email = () => {
     const [inputs, setInputs] = useState({account: '', password: ''})
 
     const submitHandler = async () => {
-        let rqx = await request('GET', `/auth/attempt/email`, '', inputs)
+        console.log(inputs);
+        let rqx = await request('GET', `/api/auth/attempt/email`, '', inputs)
+        console.log(rqx);
     }
     
     const gResponse = () => {
@@ -75,12 +78,12 @@ export const Email = () => {
 
     return (
         <Box height="100%" display="flex" justifyContent="center" alignItems="center" bgcolor="#ffffff">
-            <Box display="flex" alignItems="center" width="50%" height="50%" bgcolor="green" borderRadius={20}bgcolor="#e3e1f8">
-                <Box width="50%" height="100%" className={classes.bg}></Box>
-                <Box pl={6.5} pr={6.5} width="50%">
+            <Box display="flex" alignItems="center" width="750px" height="450px" borderRadius={20}bgcolor="#e3e1f8">
+                <Box width="45%" height="100%" className={classes.bg}></Box>
+                <Box pl={6.5} pr={6.5} width="55%">
                     <Box mb={3}>
-                        <Typography className="f-30"><strong>CART</strong> A<strong>CAR</strong></Typography>
-                        <Typography className="f-14">Start using POFSIS with your existing account from . . .</Typography>
+                        <Typography className="f-30"><strong>CART</strong>A<strong>CAR</strong></Typography>
+                        <Typography className="f-14">Email Signin</Typography>
                     </Box>
                     <Box>
                         <Box className={classes.search} mb={2}>
@@ -88,49 +91,49 @@ export const Email = () => {
                             <InputBase width="100%" placeholder="Email" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
-                            }} inputProps={{ 'aria-label': 'Email' }} onChange={(e)=>setInputs({...inputs, account: e.event.target})} />
+                            }} inputProps={{ 'aria-label': 'Email' }} onChange={(e)=>setInputs({...inputs, account: e.target.value})} />
                         </Box>
                         <Box className={classes.search} mb={2}>
                             <Box className={classes.searchIcon} color="gray"><IVpnKey /></Box>
                             <InputBase type="password" width="100%" placeholder="Password" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
-                            }} inputProps={{ 'aria-label': 'search' }} onChange={(e)=>setInputs({...inputs, password: e.event.target})} />
+                            }} inputProps={{ 'aria-label': 'search' }} onChange={(e)=>setInputs({...inputs, password: e.target.value})} />
                         </Box>
                         <Button variant="contained" color="primary" fullWidth onClick={submitHandler}>SIGNIN</Button>
                         <Box mb={2} mt={2} className="separator">OR</Box>
                         <Grid container spacing={1}>
-                            <Grid item xs={6}>
+                            <Grid item xs={3}>
                                 <Link to="/si/mobile">
-                                    <Box display="flex" mb={0.5} alignItems="center" bgcolor="#ffffff" p={1.5} borderRadius={10} className={classes.button} color="black">
+                                    <Box display="flex" mb={0.5} justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} className={classes.button} color="black">
                                         <IPhone style={{color: '#000000'}} />
-                                        <Box ml={1} className="f-13"><strong>Mobile Number</strong></Box>
+                                        {/* <Box ml={1} className="f-13"><strong>Mobile Number</strong></Box> */}
                                     </Box>
                                 </Link>
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={3}>
                                 <AuthG clientId="363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com" render={props => (
-                                    <Box display="flex" alignItems="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
-                                        <IGTranslate style={{color: '#3ead8c'}} />
-                                        <Box ml={1} className="f-13"><strong>Google</strong></Box>
+                                    <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
+                                        <IGTranslate style={{color: '#c23829'}} />
+                                        {/* <Box ml={1} className="f-13"><strong>Google</strong></Box> */}
                                     </Box>
                                     )} buttonText="Login" onSuccess={gResponse} onFailure={gResponse} cookiePolicy={'single_host_origin'}
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={3}>
                                 <AuthFB appId="1132127907263808" fields="name,email,picture" callback={fbResponse} render={props => (
-                                    <Box display="flex" alignItems="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
+                                    <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
                                         <IFacebook style={{color: '#549bc7'}} />
-                                        <Box ml={1} className="f-13"><strong>Facebook</strong></Box>
+                                        {/* <Box ml={1} className="f-13"><strong>Facebook</strong></Box> */}
                                     </Box>
                                     )}
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={3}>
                                 <AuthMO clientId={`05e56ff0-f31f-40f4-b327-8eff7efccdba`} authCallback={moResponse} graphScopes={['user.read', 'email']}>
-                                    <Box display="flex" alignItems="center" bgcolor="#ffffff" p={1.5} borderRadius={10} className={classes.button}>
+                                    <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} className={classes.button}>
                                         <IDrafts style={{color: 'grey'}} />
-                                        <Box ml={1} className="f-13"><strong>Outlook</strong></Box>
+                                        {/* <Box ml={1} className="f-13"><strong>Outlook</strong></Box> */}
                                     </Box>
                                 </AuthMO>
                             </Grid>
