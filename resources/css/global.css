@@ -4,6 +4,10 @@
     font-family: "Poppins", sans-serif !important;
 } */
 
+a {
+    text-decoration: none;
+}
+
 .personal-logo {
     width: 7rem;
     max-width: 7rem;

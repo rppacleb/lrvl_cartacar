@@ -4,6 +4,7 @@ import { Core as RootCore } from './Core';
 import { Core as AuthCore } from './components/auth/Core';
 import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
+import { BrowserRouter as Router } from 'react-router-dom';
 import '../../css/global.css'
 import '../../css/scrollbar.css'
 
@@ -44,7 +45,7 @@ const pageTheme = createMuiTheme({
 })
 
 if (document.getElementById('root')) {
-	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><RootCore /></ThemeProvider>, document.getElementById('uroot'));
+	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><Router><RootCore /></Router></ThemeProvider>, document.getElementById('uroot'));
 } else {
-	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><AuthCore /></ThemeProvider>, document.getElementById('auth'));
+	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><Router><AuthCore /></Router></ThemeProvider>, document.getElementById('auth'));
 }

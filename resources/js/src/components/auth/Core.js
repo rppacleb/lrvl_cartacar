@@ -1,7 +1,7 @@
-import { SI } from "./si/Index"
+import { WebRoute } from "../../core/Router/AuthRoute"
 
 export const Core = () => {
     return (
-        <SI />
+        <WebRoute />
     )
 }
