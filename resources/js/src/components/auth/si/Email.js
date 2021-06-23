@@ -8,7 +8,6 @@ import AuthG from 'react-google-login';
 import AuthMO from 'react-microsoft-login';
 import { request } from '../../../core/request/API';
 
-
 import gif1 from '../../../../../images/gif1.gif'
 
 const style = makeStyles(theme => ({
@@ -58,22 +57,43 @@ const style = makeStyles(theme => ({
 export const Email = () => {
     let classes = style()
     const [inputs, setInputs] = useState({account: '', password: ''})
+    const [validation, setValidation] = useState({email: '', tp: ''})
 
     const submitHandler = async () => {
-        console.log(inputs);
-        let rqx = await request('GET', `/api/auth/attempt/email`, '', inputs)
-        console.log(rqx);
+        setValidation({...validation, email: ''})
+        if (inputs.account !== '' && inputs.password !== '') {
+            let rqx = await request('GET', `/api/auth/attempt/email`, '', inputs)
+            if (rqx.msg === '!user') {
+                setValidation({...validation, email: 'Account Mismatched!'})
+            }
+        }
     }
     
-    const gResponse = () => {
+    const gResponse = async (res) => {
+        console.log('google');
+        let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.profileObj.email})
+        if (rqx.msg === 'user') {
+            window.location.reload()
+        }
     }
     
-    const fbResponse = () => {
-
+    const fbResponse = async (res) => {
+        console.log(res);
+        let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.email})
+        if (rqx.msg === 'user') {
+            window.location.reload()
+        }
     }
 
-    const moResponse = () => {
-
+    const moResponse = (err, data, msal) => {
+        const __init = async () => {
+            let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: data.account.idToken.email})
+            console.log(rqx);
+            if (rqx.msg === 'user') {
+                // window.location.href = '/'
+            }
+        }
+        data !== undefined && __init()
     }
 
     return (
@@ -86,20 +106,21 @@ export const Email = () => {
                         <Typography className="f-14">Email Signin</Typography>
                     </Box>
                     <Box>
-                        <Box className={classes.search} mb={2}>
+                        <Box style={validation.email !== '' ? {border: '1px solid red'} : {}} className={classes.search} mb={2}>
                             <Box className={classes.searchIcon} color="gray"><IMailOutline /></Box>
-                            <InputBase width="100%" placeholder="Email" classes={{
+                            <InputBase fullWidth placeholder="Email" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }} inputProps={{ 'aria-label': 'Email' }} onChange={(e)=>setInputs({...inputs, account: e.target.value})} />
                         </Box>
-                        <Box className={classes.search} mb={2}>
+                        <Box style={validation.email !== '' ? {border: '1px solid red'} : {}} className={classes.search}>
                             <Box className={classes.searchIcon} color="gray"><IVpnKey /></Box>
-                            <InputBase type="password" width="100%" placeholder="Password" classes={{
+                            <InputBase type="password" fullWidth placeholder="Password" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }} inputProps={{ 'aria-label': 'search' }} onChange={(e)=>setInputs({...inputs, password: e.target.value})} />
                         </Box>
+                        <Box color="red" mb={2} mt={1}>{validation.email}</Box>
                         <Button variant="contained" color="primary" fullWidth onClick={submitHandler}>SIGNIN</Button>
                         <Box mb={2} mt={2} className="separator">OR</Box>
                         <Grid container spacing={1}>
@@ -112,7 +133,7 @@ export const Email = () => {
                                 </Link>
                             </Grid>
                             <Grid item xs={3}>
-                                <AuthG clientId="363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com" render={props => (
+                                <AuthG clientId="9179683700-vvlvtj7p7tcm49d9ngb5kcvee76h033r.apps.googleusercontent.com" render={props => (
                                     <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
                                         <IGTranslate style={{color: '#c23829'}} />
                                         {/* <Box ml={1} className="f-13"><strong>Google</strong></Box> */}
@@ -121,7 +142,7 @@ export const Email = () => {
                                 />
                             </Grid>
                             <Grid item xs={3}>
-                                <AuthFB appId="1132127907263808" fields="name,email,picture" callback={fbResponse} render={props => (
+                                <AuthFB appId="495597934830897" fields="name,email,picture" callback={fbResponse} render={props => (
                                     <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
                                         <IFacebook style={{color: '#549bc7'}} />
                                         {/* <Box ml={1} className="f-13"><strong>Facebook</strong></Box> */}
@@ -138,6 +159,7 @@ export const Email = () => {
                                 </AuthMO>
                             </Grid>
                         </Grid>
+                        <Box color="red" mb={2} mt={1}>{validation.tp}</Box>
                     </Box>
                     <Box mt={2}>
                         <Typography className="f-12">Don't have an account? <Link to="/signup" style={{textDecoration: 'none', color: '#443191'}}>Signup</Link></Typography>

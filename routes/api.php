@@ -16,3 +16,4 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('auth/attempt/{mode}', [AuthController::class, 'attempt']);
+Route::get('auth/tp/attempt/{mode}', [AuthController::class, 'tpAttempt']);

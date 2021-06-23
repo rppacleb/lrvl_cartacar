@@ -9,10 +9,11 @@
         
     </head>
     <body style="margin: 0px">
-        @if (session()->has('uclient'))
+        {{session()->get('uclient')['id']}}
+        @if (Session::has('uclient'))
             <div id="uroot"></div>
-        @elseif (session()->has('aclient'))
-            <div id="aroot"></div>
+        @elseif (session::has('aclient'))
+            <div id="uroot"></div>
         @else
             <style> html, body { height: 100% } </style>
             <div id="auth" style="height: 100%"></div>

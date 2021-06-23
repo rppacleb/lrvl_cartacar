@@ -8779,11 +8779,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_request_API__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../core/request/API */ "./resources/js/src/core/request/API.js");
 /* harmony import */ var _images_gif1_gif__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../images/gif1.gif */ "./resources/images/gif1.gif");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -8868,6 +8868,14 @@ var Email = function Email() {
       inputs = _useState2[0],
       setInputs = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    email: '',
+    tp: ''
+  }),
+      _useState4 = _slicedToArray(_useState3, 2),
+      validation = _useState4[0],
+      setValidation = _useState4[1];
+
   var submitHandler = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
       var rqx;
@@ -8875,15 +8883,28 @@ var Email = function Email() {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              console.log(inputs);
-              _context.next = 3;
+              setValidation(_objectSpread(_objectSpread({}, validation), {}, {
+                email: ''
+              }));
+
+              if (!(inputs.account !== '' && inputs.password !== '')) {
+                _context.next = 6;
+                break;
+              }
+
+              _context.next = 4;
               return (0,_core_request_API__WEBPACK_IMPORTED_MODULE_5__.request)('GET', "/api/auth/attempt/email", '', inputs);
 
-            case 3:
+            case 4:
               rqx = _context.sent;
-              console.log(rqx);
 
-            case 5:
+              if (rqx.msg === '!user') {
+                setValidation(_objectSpread(_objectSpread({}, validation), {}, {
+                  email: 'Account Mismatched!'
+                }));
+              }
+
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -8896,11 +8917,107 @@ var Email = function Email() {
     };
   }();
 
-  var gResponse = function gResponse() {};
+  var gResponse = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(res) {
+      var rqx;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              console.log('google');
+              _context2.next = 3;
+              return (0,_core_request_API__WEBPACK_IMPORTED_MODULE_5__.request)('GET', "/api/auth/tp/attempt/email", '', {
+                account: res.profileObj.email
+              });
 
-  var fbResponse = function fbResponse() {};
+            case 3:
+              rqx = _context2.sent;
 
-  var moResponse = function moResponse() {};
+              if (rqx.msg === 'user') {
+                window.location.reload();
+              }
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function gResponse(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  var fbResponse = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(res) {
+      var rqx;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              console.log(res);
+              _context3.next = 3;
+              return (0,_core_request_API__WEBPACK_IMPORTED_MODULE_5__.request)('GET', "/api/auth/tp/attempt/email", '', {
+                account: res.email
+              });
+
+            case 3:
+              rqx = _context3.sent;
+
+              if (rqx.msg === 'user') {
+                window.location.reload();
+              }
+
+            case 5:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+
+    return function fbResponse(_x2) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  var moResponse = function moResponse(err, data, msal) {
+    var __init = /*#__PURE__*/function () {
+      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+        var rqx;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return (0,_core_request_API__WEBPACK_IMPORTED_MODULE_5__.request)('GET', "/api/auth/tp/attempt/email", '', {
+                  account: data.account.idToken.email
+                });
+
+              case 2:
+                rqx = _context4.sent;
+                console.log(rqx);
+
+                if (rqx.msg === 'user') {// window.location.href = '/'
+                }
+
+              case 5:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      return function __init() {
+        return _ref4.apply(this, arguments);
+      };
+    }();
+
+    data !== undefined && __init();
+  };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
     height: "100%",
@@ -8938,6 +9055,9 @@ var Email = function Email() {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            style: validation.email !== '' ? {
+              border: '1px solid red'
+            } : {},
             className: classes.search,
             mb: 2,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
@@ -8945,7 +9065,7 @@ var Email = function Email() {
               color: "gray",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_11__.default, {})
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
-              width: "100%",
+              fullWidth: true,
               placeholder: "Email",
               classes: {
                 root: classes.inputRoot,
@@ -8961,15 +9081,17 @@ var Email = function Email() {
               }
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            style: validation.email !== '' ? {
+              border: '1px solid red'
+            } : {},
             className: classes.search,
-            mb: 2,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
               className: classes.searchIcon,
               color: "gray",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons__WEBPACK_IMPORTED_MODULE_13__.default, {})
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
               type: "password",
-              width: "100%",
+              fullWidth: true,
               placeholder: "Password",
               classes: {
                 root: classes.inputRoot,
@@ -8984,6 +9106,11 @@ var Email = function Email() {
                 }));
               }
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            color: "red",
+            mb: 2,
+            mt: 1,
+            children: validation.email
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_14__.default, {
             variant: "contained",
             color: "primary",
@@ -9023,7 +9150,7 @@ var Email = function Email() {
               item: true,
               xs: 3,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react_google_login__WEBPACK_IMPORTED_MODULE_3___default()), {
-                clientId: "363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com",
+                clientId: "9179683700-vvlvtj7p7tcm49d9ngb5kcvee76h033r.apps.googleusercontent.com",
                 render: function render(props) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
                     display: "flex",
@@ -9049,7 +9176,7 @@ var Email = function Email() {
               item: true,
               xs: 3,
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_2___default()), {
-                appId: "1132127907263808",
+                appId: "495597934830897",
                 fields: "name,email,picture",
                 callback: fbResponse,
                 render: function render(props) {
@@ -9091,6 +9218,11 @@ var Email = function Email() {
                 })
               })
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
+            color: "red",
+            mb: 2,
+            mt: 1,
+            children: validation.tp
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
           mt: 2,
@@ -9698,7 +9830,7 @@ var Options = function Options() {
             item: true,
             xs: 12,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_facebook_login_dist_facebook_login_render_props__WEBPACK_IMPORTED_MODULE_0___default()), {
-              appId: "1132127907263808",
+              appId: "2930303556994167",
               fields: "name,email,picture",
               callback: fbResponse,
               render: function render(props) {

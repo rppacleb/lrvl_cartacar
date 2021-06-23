@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{any}', function () {
-    return view('index');
-})->where('any', '^(?!api).*$');
+Route::get('/auth/session', [AuthController::class, 'index'])->name('session');
+
+Route::get('/{any}', [AuthController::class, 'index'])->where('any', '^(?!api).*$');
+
+// Route::get('/{any}', function () {
+//     return view('index');
+// })->where('any', '^(?!api).*$');

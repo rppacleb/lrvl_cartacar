@@ -104,7 +104,7 @@ export const Options = () => {
                             />
                         </Grid>
                         <Grid item xs={12}>
-                            <AuthFB appId="1132127907263808" fields="name,email,picture" callback={fbResponse} render={props => (
+                            <AuthFB appId="2930303556994167" fields="name,email,picture" callback={fbResponse} render={props => (
                                 <Box display="flex" mb={0.5} alignItems="center" bgcolor="#ffffff" p={1.3} borderRadius={10} onClick={props.onClick} className={classes.button}>
                                     <IFacebook style={{color: '#549bc7'}} />
                                     <Box ml={1} className="f-12"><strong>Facebook</strong></Box>
