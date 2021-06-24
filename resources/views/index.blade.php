@@ -10,9 +10,9 @@
     </head>
     <body style="margin: 0px">
         @if (Session::has('uclient'))
-            <div id="uroot"></div>
+            <div id="uroot" auth="{{ json_encode(session('uclient')) }}"></div>
         @elseif (session::has('aclient'))
-            <div id="uroot"></div>
+            <div id="uroot" auth="{{ json_encode(session('aclient')) }}"></div>
         @else
             <style> html, body { height: 100% } </style>
             <div id="auth" style="height: 100%"></div>
