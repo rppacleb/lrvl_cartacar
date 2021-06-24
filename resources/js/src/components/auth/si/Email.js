@@ -78,10 +78,11 @@ export const Email = () => {
     }
     
     const fbResponse = async (res) => {
-        console.log(res);
+        console.log('facebook');
         let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.email})
+        console.log(rqx);
         if (rqx.msg === 'user') {
-            window.location.reload()
+            // window.location.reload()
         }
     }
 

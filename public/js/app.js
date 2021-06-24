@@ -8957,7 +8957,7 @@ var Email = function Email() {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              console.log(res);
+              console.log('facebook');
               _context3.next = 3;
               return (0,_core_request_API__WEBPACK_IMPORTED_MODULE_5__.request)('GET', "/api/auth/tp/attempt/email", '', {
                 account: res.email
@@ -8965,12 +8965,12 @@ var Email = function Email() {
 
             case 3:
               rqx = _context3.sent;
+              console.log(rqx);
 
-              if (rqx.msg === 'user') {
-                window.location.reload();
+              if (rqx.msg === 'user') {// window.location.reload()
               }
 
-            case 5:
+            case 6:
             case "end":
               return _context3.stop();
           }

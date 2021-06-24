@@ -32,7 +32,7 @@ class Authenticate {
         $user = User::where($mode, $request['account'])->get();
 
         if (count($user) > 0) {
-            return route('session', $user[0]);
+            session(['uclient' => $user[0]]);
 
             return [
                 'msg'=> 'user',
@@ -47,7 +47,7 @@ class Authenticate {
             ]);
 
             $user = User::where('id', $newUser)->get();
-            Auth::login($user[0]);
+            session(['uclient' => $user[0]]);
             
             return [
                 'msg'=> 'user',

@@ -13,11 +13,9 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/{any}', [AuthController::class, 'index'])->where('any', '^(?!api).*$');
 
-Route::get('/auth/session', [AuthController::class, 'index'])->name('session');
-
-Route::get('/{any}', [AuthController::class, 'index'])->where('any', '^(?!api).*$');
-
-// Route::get('/{any}', function () {
-//     return view('index');
-// })->where('any', '^(?!api).*$');
+Route::get('/{any}', function () {
+    // return session()->get('uclient');
+    return view('index');
+})->where('any', '^(?!api).*$');

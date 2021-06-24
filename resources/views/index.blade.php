@@ -9,7 +9,6 @@
         
     </head>
     <body style="margin: 0px">
-        {{session()->get('uclient')['id']}}
         @if (Session::has('uclient'))
             <div id="uroot"></div>
         @elseif (session::has('aclient'))

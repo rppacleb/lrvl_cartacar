@@ -16,7 +16,9 @@ class AuthController extends Controller
 
     public function index()
     {
-        // return session()->get('uclient');
+        // self::session();
+        // session()->flush();
+        return session()->get('uclient');
         return view('index');
     }
 
@@ -28,12 +30,5 @@ class AuthController extends Controller
     public function tpAttempt(Request $request, $mode)
     {
         return $this->instance->tpAttempt($request, $mode);
-    }
-
-    public function session(Request $rqx)
-    {   
-        session(['uclient' => 'asdasd']);
-
-        return 'asdsad';
     }
 }
