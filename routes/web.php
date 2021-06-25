@@ -17,5 +17,6 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/{any}', function () {
     // return session()->get('uclient');
+    // session()->flush();
     return view('index');
 })->where('any', '^(?!api).*$');

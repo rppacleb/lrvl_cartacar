@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Core as URootCore } from './components/home/Core';
+import { Core as UCore } from './components/user/Core';
+import { Core as ACore } from './components/admin/Core';
 import { Core as AuthCore } from './components/auth/Core';
 import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme, ThemeProvider} from '@material-ui/core/styles';
 import { BrowserRouter as Router } from 'react-router-dom';
-import '../../css/global.css'
-import '../../css/scrollbar.css'
+import './assets/css/global.css'
+import './assets/css/scrollbar.css'
 
 const pageTheme = createMuiTheme({
 	palette: {
@@ -44,8 +45,10 @@ const pageTheme = createMuiTheme({
 	},
 })
 
-if (document.getElementById('uroot')) {
-	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><Router><URootCore /></Router></ThemeProvider>, document.getElementById('uroot'));
+if (document.getElementById('aroot')) {
+	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><Router><ACore /></Router></ThemeProvider>, document.getElementById('aroot'));
+} else if (document.getElementById('uroot')) {
+	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><Router><UCore /></Router></ThemeProvider>, document.getElementById('uroot'));
 } else {
 	ReactDOM.render(<ThemeProvider theme={pageTheme}><CssBaseline /><Router><AuthCore /></Router></ThemeProvider>, document.getElementById('auth'));
 }

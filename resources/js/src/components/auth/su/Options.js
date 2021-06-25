@@ -59,7 +59,7 @@ export const Options = () => {
     
     const gResponse = async (res) => {
         console.log(res);
-        let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.profileObj.email})
+        let rqx = await request('GET', `/api/auth/su/tp/attempt/email`, '', {account: res.profileObj.email})
         if (rqx.msg === 'user') {
             window.location.href = '/'
         }
@@ -67,7 +67,7 @@ export const Options = () => {
     
     const fbResponse = async (res) => {
         console.log('facebook');
-        let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.email})
+        let rqx = await request('GET', `/api/auth/su/tp/attempt/email`, '', {account: res.email})
         console.log(rqx);
         if (rqx.msg === 'user') {
             window.location.href = '/'
@@ -85,11 +85,11 @@ export const Options = () => {
                 <Box p={6.5} width="55%">
                     <Box mb={3}>
                         <Typography className="f-25"><strong>CART</strong>A<strong>CAR</strong></Typography>
-                        <Typography className="f-12">Start using Cartacar with your existing account from . . .</Typography>
+                        <Typography className="f-12">Signup to Cartacar using . . .</Typography>
                     </Box>
                     <Grid container spacing={1}>
                         <Grid item xs={12}>
-                            <Link to="/si/email">
+                            <Link to="/su/email">
                                 <Box display="flex" mb={0.5} alignItems="center" bgcolor="#ffffff" p={1.3} borderRadius={10} className={classes.button} color="black">
                                     <IMailOutline style={{color: '#3ead8c'}} />
                                     <Box ml={1} className="f-12"><strong>Email</strong></Box>
@@ -97,7 +97,7 @@ export const Options = () => {
                             </Link>
                         </Grid>
                         <Grid item xs={12}>
-                            <Link to="/si/mobile">
+                            <Link to="/su/mobile">
                                 <Box display="flex" mb={0.5} alignItems="center" bgcolor="#ffffff" p={1.3} borderRadius={10} className={classes.button} color="black">
                                     <IPhone style={{color: '#000000'}} />
                                     <Box ml={1} className="f-12"><strong>Mobile Number</strong></Box>
@@ -132,7 +132,7 @@ export const Options = () => {
                         </Grid> */}
                     </Grid>
                     <Box mt={2}>
-                        <Typography className="f-12">Don't have an account? <Link to="/signup" style={{textDecoration: 'none', color: '#443191'}}>Signup</Link></Typography>
+                        <Typography className="f-12">Already have an account? <Link to="/" style={{textDecoration: 'none', color: '#443191'}}>Signin</Link></Typography>
                     </Box>
                 </Box>
             </Box>

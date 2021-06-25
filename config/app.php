@@ -2,6 +2,10 @@
 
 return [
 
+    // CUSTOM
+    'aws_region' => env('AWS_DEFAULT_REGION', 'ap-southeast-1'),
+    'aws_bucket' => env('AWS_BUCKET', 'pofsis-repo'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

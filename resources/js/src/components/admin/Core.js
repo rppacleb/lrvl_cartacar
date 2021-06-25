@@ -1,12 +1,13 @@
-import { useState, useEffect  } from "react"
-import { Container, Box } from "@material-ui/core"
+import { useState, useEffect } from "react"
+import { Container, Box, makeStyles, fade } from "@material-ui/core"
 
 
+import { WebRoute } from "../../core/Router/AdminRoute"
 import { Navbar } from "../layouts/Navbar"
-import { Products } from "./Products/Index"
+import { Products } from "../home/Index"
 
 export const Core = () => {
-    const [auth, setAuth] = useState(JSON.parse(document.getElementById('uroot').getAttribute('auth')))
+    const [auth, setAuth] = useState(JSON.parse(document.getElementById('aroot').getAttribute('auth')))
     const [name, setName] = useState('')
     useEffect(() => {
         let n = auth.email.split('@');
@@ -18,7 +19,7 @@ export const Core = () => {
             <Navbar />
             <Box mt={10}>
                 <Container>
-                    <Products name={name} />
+                    <WebRoute />
                 </Container>
             </Box>
         </>

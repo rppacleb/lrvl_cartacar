@@ -6,7 +6,7 @@ import * as Icon from 'react-feather';
 import AuthFB from 'react-facebook-login/dist/facebook-login-render-props'
 import AuthG from 'react-google-login';
 import AuthMO from 'react-microsoft-login';
-
+import { request } from '../../../core/request/API';
 
 import gif1 from '../../../../../images/gif1.gif'
 
@@ -29,7 +29,7 @@ const style = makeStyles(theme => ({
 		width: '100%',
 	},
 	searchIcon: {
-		paddingBottom: theme.spacing(1.2),
+		paddingBottom: theme.spacing(1),
 		height: '100%',
 		position: 'absolute',
 		pointerEvents: 'none',
@@ -57,21 +57,47 @@ const style = makeStyles(theme => ({
 export const Mobile = () => {
     let classes = style()
     const [inputs, setInputs] = useState({account: '', password: ''})
+    const [validation, setValidation] = useState({email: '', tp: ''})
 
     const submitHandler = async () => {
-        let rqx = await request('GET', `/auth/attempt/email`, '', inputs)
+        setValidation({...validation, email: ''})
+        if (inputs.account !== '' && inputs.password !== '') {
+            let rqx = await request('GET', `/api/auth/attempt/email`, '', inputs)
+            if (rqx.msg === '!user') {
+                setValidation({...validation, email: 'Account Mismatched!'})
+            } else {
+                window.location.href = '/'
+            }
+        }
     }
     
-    const gResponse = () => {
+    const gResponse = async (res) => {
+        console.log(res);
+        let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.profileObj.email})
+        if (rqx.msg === 'user') {
+            window.location.href = '/'
+        }
     }
     
-    const fbResponse = () => {
-
+    const fbResponse = async (res) => {
+        console.log('facebook');
+        let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.email})
+        console.log(rqx);
+        if (rqx.msg === 'user') {
+            window.location.href = '/'
+        }
     }
 
-    const moResponse = () => {
-
-    }
+    // const moResponse = (err, data, msal) => {
+    //     const __init = async () => {
+    //         let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: data.account.idToken.email})
+    //         console.log(rqx);
+    //         if (rqx.msg === 'user') {
+    //             window.location.href = '/'
+    //         }
+    //     }
+    //     data !== undefined && __init()
+    // }
 
     return (
         <Box height="100%" display="flex" justifyContent="center" alignItems="center" bgcolor="#ffffff">
@@ -83,33 +109,34 @@ export const Mobile = () => {
                         <Typography className="f-14">Mobile Number Signin</Typography>
                     </Box>
                     <Box>
-                        <Box className={classes.search} mb={2}>
-                            <Box className={classes.searchIcon} color="gray"><IPhone /></Box>
-                            <InputBase width="100%" placeholder="Mobile Number" classes={{
+                        <Box style={validation.email !== '' ? {border: '1px solid red'} : {}} className={classes.search} mb={2}>
+                            <Box className={classes.searchIcon} color="gray"><IPhone /> +63</Box>
+                            <InputBase fullWidth placeholder="Mobile Number" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
-                            }} inputProps={{ 'aria-label': 'Mobile Number' }} onChange={(e)=>setInputs({...inputs, account: e.event.target})} />
+                            }} inputProps={{ 'aria-label': 'Mobile Number' }} onChange={(e)=>setInputs({...inputs, account: e.target.value})} style={{paddingLeft:'24px'}} />
                         </Box>
-                        <Box className={classes.search} mb={2}>
+                        <Box style={validation.email !== '' ? {border: '1px solid red'} : {}} className={classes.search}>
                             <Box className={classes.searchIcon} color="gray"><IVpnKey /></Box>
-                            <InputBase type="password" width="100%" placeholder="Password" classes={{
+                            <InputBase type="password" fullWidth placeholder="Password" classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
-                            }} inputProps={{ 'aria-label': 'search' }} onChange={(e)=>setInputs({...inputs, password: e.event.target})} />
+                            }} inputProps={{ 'aria-label': 'search' }} onChange={(e)=>setInputs({...inputs, password: e.target.value})} />
                         </Box>
+                        <Box color="red" mb={2} mt={1}>{validation.email}</Box>
                         <Button variant="contained" color="primary" fullWidth onClick={submitHandler}>SIGNIN</Button>
                         <Box mb={2} mt={2} className="separator">OR</Box>
                         <Grid container spacing={1}>
-                            <Grid item xs={3}>
+                            <Grid item xs={4}>
                                 <Link to="/si/email">
                                     <Box display="flex" mb={0.5} justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} className={classes.button} color="black">
-                                        <IMailOutline style={{color: '#3ead8c'}} />
+                                        <IMailOutline style={{color: '#000000'}} />
                                         {/* <Box ml={1} className="f-13"><strong>Mobile Number</strong></Box> */}
                                     </Box>
                                 </Link>
                             </Grid>
-                            <Grid item xs={3}>
-                                <AuthG clientId="363837300258-mvhdo2rb05toh23n9ismjfglttjo99oj.apps.googleusercontent.com" render={props => (
+                            <Grid item xs={4}>
+                                <AuthG clientId="9179683700-vvlvtj7p7tcm49d9ngb5kcvee76h033r.apps.googleusercontent.com" render={props => (
                                     <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
                                         <IGTranslate style={{color: '#c23829'}} />
                                         {/* <Box ml={1} className="f-13"><strong>Google</strong></Box> */}
@@ -117,8 +144,8 @@ export const Mobile = () => {
                                     )} buttonText="Login" onSuccess={gResponse} onFailure={gResponse} cookiePolicy={'single_host_origin'}
                                 />
                             </Grid>
-                            <Grid item xs={3}>
-                                <AuthFB appId="1132127907263808" fields="name,email,picture" callback={fbResponse} render={props => (
+                            <Grid item xs={4}>
+                                <AuthFB appId="495597934830897" fields="name,email,picture" callback={fbResponse} render={props => (
                                     <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} onClick={props.onClick} className={classes.button}>
                                         <IFacebook style={{color: '#549bc7'}} />
                                         {/* <Box ml={1} className="f-13"><strong>Facebook</strong></Box> */}
@@ -126,15 +153,15 @@ export const Mobile = () => {
                                     )}
                                 />
                             </Grid>
-                            <Grid item xs={3}>
+                            {/* <Grid item xs={3}>
                                 <AuthMO clientId={`05e56ff0-f31f-40f4-b327-8eff7efccdba`} authCallback={moResponse} graphScopes={['user.read', 'email']}>
                                     <Box display="flex" justifyContent="center" bgcolor="#ffffff" p={1.5} borderRadius={10} className={classes.button}>
                                         <IDrafts style={{color: 'grey'}} />
-                                        {/* <Box ml={1} className="f-13"><strong>Outlook</strong></Box> */}
                                     </Box>
                                 </AuthMO>
-                            </Grid>
+                            </Grid> */}
                         </Grid>
+                        <Box color="red" mb={2} mt={1}>{validation.tp}</Box>
                     </Box>
                     <Box mt={2}>
                         <Typography className="f-12">Don't have an account? <Link to="/signup" style={{textDecoration: 'none', color: '#443191'}}>Signup</Link></Typography>

@@ -14,14 +14,6 @@ class AuthController extends Controller
         $this->instance = new Authenticate();
     }
 
-    public function index()
-    {
-        // self::session();
-        // session()->flush();
-        return session()->get('uclient');
-        return view('index');
-    }
-
     public function attempt(Request $request, $mode)
     {
         return $this->instance->attempt($request, $mode);
@@ -30,5 +22,24 @@ class AuthController extends Controller
     public function tpAttempt(Request $request, $mode)
     {
         return $this->instance->tpAttempt($request, $mode);
+    }
+
+    public function suAttempt(Request $request, $mode)
+    {
+        return $this->instance->suAttempt($request, $mode);
+    }
+
+    public function suTpAttempt(Request $request, $mode)
+    {
+        return $this->instance->suTpAttempt($request, $mode);
+    }
+
+    public function signout()
+    {
+        session()->flush();
+
+        return [
+            'msg'=> 'success'
+        ];
     }
 }

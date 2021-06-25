@@ -1,12 +1,12 @@
 export const request = (method, link, body='sd', qsp='') => {
     return new Promise(resolve => {
         let h = new Headers();
-        h.append('Content-Type', 'application/json');
+        // h.append('Content-Type', 'application/json');
 
         let param = {
             method: method,
             headers: h,
-            body: JSON.stringify(body),
+            body: body,
             redirect: 'follow'
         };
 
@@ -20,7 +20,7 @@ export const request = (method, link, body='sd', qsp='') => {
 
         fetch(`${link}${qsp}`, param)
         .then(result => {
-            return resolve(result.text())
+            return resolve(result.json())
         })
         .catch(error => console.log('error', error));
     })

@@ -2,7 +2,9 @@ import { Grid, Box, Typography, makeStyles, Divider } from '@material-ui/core';
 import { Rating } from '@material-ui/lab';
 import { Facebook as IFacebook, Twitter as ITwitter, Instagram as IInstagram, LinkedIn as ILinkedIn } from '@material-ui/icons';
 
-import Hero from '../../../assets/images/universe1.gif';
+import { List } from './Products/List'
+
+import Hero from '../../assets/images/universe1.gif';
 
 let styles = makeStyles(theme => ({
     bg1: {
@@ -24,7 +26,7 @@ export const Products = ({ name }) => {
                     <Typography className="f-15">It's <strong>Add to Cart</strong> time.</Typography>
                 </Box>
             </Box>
-
+            <List />
         </>
     )
 }
