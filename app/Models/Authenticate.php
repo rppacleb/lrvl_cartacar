@@ -125,7 +125,7 @@ class Authenticate {
             $user[0]->user_type == 'user' ? session(['uclient' => $user[0]]) : session(['aclient' => $user[0]]);
             
             return [
-                'msg'=> '!user',
+                'msg'=> 'user',
                 'status'=> 200
             ];
         }
