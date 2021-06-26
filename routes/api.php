@@ -27,6 +27,7 @@ Route::get('auth/su/tp/attempt/{mode}', [AuthController::class, 'suTpAttempt']);
 
 Route::get('product/read/{filter}', [AdminController::class, 'prodRead']);
 Route::post('product/create', [AdminController::class, 'prodCreate']);
+Route::post('product/update', [AdminController::class, 'prodUpdate']);
 
 Route::get('cart', [CartController::class, 'cart']);
 Route::get('cart/count', [CartController::class, 'count']);

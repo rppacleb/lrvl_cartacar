@@ -73,18 +73,24 @@ export const Mobile = () => {
     
     const gResponse = async (res) => {
         console.log(res);
+        setValidation({...validation, tp: ''})
         let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.profileObj.email})
         if (rqx.msg === 'user') {
             window.location.href = '/'
+        } else {
+            setValidation({...validation, tp: 'Account does not exist!'})
         }
     }
     
     const fbResponse = async (res) => {
         console.log('facebook');
+        setValidation({...validation, tp: ''})
         let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.email})
         console.log(rqx);
         if (rqx.msg === 'user') {
             window.location.href = '/'
+        } else {
+            setValidation({...validation, tp: 'Account does not exist!'})
         }
     }
 

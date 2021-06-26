@@ -23,4 +23,9 @@ class AdminController extends Controller
     {
         return $this->instance->prodCreate($request);
     }
+
+    public function prodUpdate(Request $request)
+    {
+        return $this->instance->prodUpdate($request);
+    }
 }

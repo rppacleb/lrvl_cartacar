@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { Box, makeStyles, Typography, InputBase, Grid, Button } from "@material-ui/core"
 import { MailOutlineRounded as IMailOutline, VpnKeyRounded as IVpnKey, GTranslateRounded as IGTranslate, Facebook as IFacebook, DraftsRounded as IDrafts, PhoneOutlined as IPhone } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import * as Icon from 'react-feather';
 import AuthFB from 'react-facebook-login/dist/facebook-login-render-props'
 import AuthG from 'react-google-login';
-import AuthMO from 'react-microsoft-login';
+// import AuthMO from 'react-microsoft-login';
 
 import { request } from "../../../core/request/API";
 
@@ -56,21 +57,28 @@ const style = makeStyles(theme => ({
 
 export const Options = () => {
     let classes = style()
+    const [validation, setValidation] = useState('')
     
     const gResponse = async (res) => {
         console.log(res);
+        setValidation('')
         let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.profileObj.email})
         if (rqx.msg === 'user') {
             window.location.href = '/'
+        } else {
+            setValidation('Account does not exist!')
         }
     }
     
     const fbResponse = async (res) => {
         console.log('facebook');
+        setValidation('')
         let rqx = await request('GET', `/api/auth/tp/attempt/email`, '', {account: res.email})
         console.log(rqx);
         if (rqx.msg === 'user') {
             window.location.href = '/'
+        } else {
+            setValidation('Account does not exist!')
         }
     }
 
@@ -131,6 +139,7 @@ export const Options = () => {
                             </AuthMO>
                         </Grid> */}
                     </Grid>
+                    <Box color="red" mb={2} mt={1}>{validation}</Box>
                     <Box mt={2}>
                         <Typography className="f-12">Don't have an account? <Link to="/signup" style={{textDecoration: 'none', color: '#443191'}}>Signup</Link></Typography>
                     </Box>

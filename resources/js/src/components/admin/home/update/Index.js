@@ -1,6 +1,6 @@
 import { Box, Button, Grid, TextField, fade, makeStyles, InputBase, } from "@material-ui/core";
 import { DriveEtaRounded as IDriveEta, AttachMoneyRounded as IAttachMoney, DescriptionRounded as IDescription } from "@material-ui/icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import swal from 'sweetalert';
 
@@ -48,23 +48,41 @@ const style = makeStyles((theme) => ({
 	},
 }));
 
-export const Create = () => {
+export const Update = ({ match }) => {
     let classes = style()
     let history = useHistory()
+    const [currentLogo, setCurrentLogo] = useState('')
     const [logo, setLogo] = useState({file: '', object: Logo, name: ''})
     const [inputs, setInputs] = useState({name: '', amount: '', description: ''})
 
+    useEffect(() => {
+        let __init = async () => {
+            let rqx = await request('GET', `/api/product/read/${match.params.id}`, '', '')
+            setInputs({id: rqx[0].id, name: rqx[0].name, amount: rqx[0].amount, description: rqx[0].description })
+            setLogo({...logo, object: rqx[0].image_link})
+            setCurrentLogo(rqx[0].image_link)
+        }
+
+        __init()
+    }, [])
+
     const submitHandler = () => {
-        if ((logo.file !== '') && (inputs.name !== '') && (inputs.amount !== '') && (inputs.description !== '')) {
+        if ((inputs.name !== '') && (inputs.amount !== '') && (inputs.description !== '')) {
             const form = new FormData(); 
-            form.append('logo', logo.file, logo.name); 
+            if (logo.file !== '') {
+                form.append('logo', logo.file, logo.name); 
+            } else {
+                form.append('logo', 'default'); 
+                form.append('current', currentLogo); 
+            }
+            form.append('id', inputs.id); 
             form.append('name', inputs.name); 
             form.append('amount', inputs.amount); 
             form.append('description', inputs.description); 
 
             swal({
                 title: 'Are you sure?',
-                text: 'We are about to create a new product',
+                text: 'We are about to update a product',
                 icon: "warning",
                 buttons: ['Nope', 'Yes please'],
                 dangerMode: true,
@@ -79,9 +97,9 @@ export const Create = () => {
                         closeOnEsc: !1
                     })
 
-                    let rqx = await request('POST', `/api/product/create`, form)
+                    let rqx = await request('POST', `/api/product/update`, form)
                     console.log(rqx);
-
+                    
                     if (rqx.msg === 'success') {
                         swal.close()
                         history.push('/')
@@ -107,7 +125,7 @@ export const Create = () => {
         <>
             <Box display="flex" justifyContent="space-between" alignItems="center" mt={5} mb={3}>
                 <Box mb={2} className="f-20"><strong>Create Product</strong></Box>
-                <Button variant="contained" color="primary" style={{borderRadius: '12px'}} onClick={submitHandler}>Create Now</Button>
+                <Button variant="contained" color="primary" style={{borderRadius: '12px'}} onClick={submitHandler}>Update Now</Button>
             </Box>
             <Box display="flex">
                 <Box style={{width: '13rem'}} mr={3}>
@@ -124,6 +142,7 @@ export const Create = () => {
                                     input: classes.inputInput,
                                 }} inputProps={{ 'aria-label': 'Name' }}
                                 onInput={(e) => setInputs({...inputs, name: e.target.value })}
+                                value={inputs.name}
                                 />
                             </Box>
                         </Grid>
@@ -135,6 +154,7 @@ export const Create = () => {
                                     input: classes.inputInput,
                                 }} inputProps={{ 'aria-label': 'Amount' }}
                                 onInput={(e) => setInputs({...inputs, amount: e.target.value})}
+                                value={inputs.amount}
                                 />
                             </Box>
                         </Grid>
@@ -146,6 +166,7 @@ export const Create = () => {
                                     input: classes.inputInput,
                                 }} inputProps={{ 'aria-label': 'Description' }} rows={6} rowsMax={6} multiline
                                 onInput={(e) => setInputs({...inputs, description: e.target.value})}
+                                value={inputs.description}
                                 />
                             </Box>
                         </Grid>

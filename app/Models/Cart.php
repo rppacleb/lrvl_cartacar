@@ -85,10 +85,15 @@ class Cart extends Model
 
     public function count()
     {
-        $cart = self::where('user_id', session('uclient')['id'])->where('active', 1)->where('is_checkout', 0)->count();
+        $cart = self::where('user_id', session('uclient')['id'])->where('active', 1)->where('is_checkout', 0)->get(['id', 'quantity']);
+        $count = 0;
+
+        for ($i=0; $i < count($cart); $i++) { 
+            $count += intval($cart[$i]->quantity);
+        }
 
         return [
-            'count'=> $cart
+            'count'=> $count
         ];
     }
 }

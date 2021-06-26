@@ -14,9 +14,9 @@ class Transaction extends Model
     public function transactions()
     {
         if (Session::has('aclient')) {
-            return self::all();
+            return self::orderBy('id', 'DESC')->get();
         } else {
-            return self::where('user_id', session('uclient')['id'])->get();
+            return self::where('user_id', session('uclient')['id'])->orderBy('id', 'DESC')->get();
 
         }
     }

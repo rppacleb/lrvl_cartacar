@@ -11,7 +11,6 @@ export const Core = () => {
     const [name, setName] = useState('')
     useEffect(() => {
         let n = auth.email.split('@');
-        console.log(n);
         setName(n[0])
     }, [])
     return (

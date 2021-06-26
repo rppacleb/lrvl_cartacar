@@ -60,10 +60,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	sectionDesktop: {
-		display: 'none',
-		[theme.breakpoints.up('md')]: {
-			display: 'flex',
-		},
+		display: 'flex',
 	},
 	sectionMobile: {
 		display: 'flex',
@@ -78,7 +75,6 @@ export const Navbar = () => {
 	let history = useHistory()
 	let location = useLocation()
     location = location.pathname.split('/')
-	console.log(location);
 	const classes = useStyles();
 	const inputEl = useRef(0);
 	const [anchorEl, setAnchorEl] = useState(null);
@@ -91,7 +87,6 @@ export const Navbar = () => {
 	const signoutHandler = () => {
 		let __init = async () => {
             let rqx = await request('GET', `/api/auth/signout`, '', '')
-            console.log(rqx);
 			window.location.href = '/'
         }
 
