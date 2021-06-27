@@ -16,8 +16,6 @@ class User extends Migration
         Schema::dropIfExists('tbl_user');
         Schema::create('tbl_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('address')->nullable();
-            $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->nullable();
             $table->string('password')->nullable();

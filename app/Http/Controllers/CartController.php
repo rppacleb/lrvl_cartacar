@@ -29,8 +29,18 @@ class CartController extends Controller
         return $this->instance->cart();
     }
 
+    public function cartToCheckout(Request $request)
+    {
+        return $this->instance->cartToCheckout($request);
+    }
+
     public function count()
     {
         return $this->instance->count();
+    }
+
+    public function cartQtyUpdate(Request $request)
+    {
+        return $this->instance->cartQtyUpdate($request);
     }
 }

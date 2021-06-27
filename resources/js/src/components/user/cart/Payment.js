@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Box, Button, Grid, makeStyles, Typography, fade, InputBase } from "@material-ui/core"
 import { PersonRounded as IPerson, AttachMoneyRounded as IAttachMoney, DescriptionRounded as IDescription } from "@material-ui/icons";
-import { useState } from "react";
-import { request } from "../../../core/request/API";
+import { useHistory } from 'react-router-dom';
 
 const style = makeStyles((theme) => ({
 	search: {
@@ -43,84 +42,26 @@ const style = makeStyles((theme) => ({
 	},
 }));
 
-export const Payment = ({ grandTotal }) => {
-    let paypal = useRef()
+export const Payment = ({ grandTotal, cart, inputs, setInputs }) => {
+    let history = useHistory()
     let classes = style()
     const [paymentViewed, setPaymentViewed] = useState(false)
-    const [inputs, setInputs] = useState({fullname: '', address: ''})
+
     useEffect(() => {
-        if (!paymentViewed) {
-            if (inputs.fullname !== '' && inputs.address !== '') {
-                setPaymentViewed(true)
-                window.paypal.Buttons({
-                    style: {
-                        size: 'large',
-                        color: 'blue',
-                        shape: 'rect',
-                        label: 'checkout',
-                        tagline: false
-                    },
-            
-                    createOrder: function(data, actions) {
-                        return actions.order.create({
-                            purchase_units: [{
-                                amount: {
-                                    value: grandTotal
-                                }
-                            }]
-                        });
-                    },
-                    
-                    onApprove: function(data, actions) {
-                        return actions.order.capture().then(function(callback) {
-                            __callback(callback)
-                        });
-                    }
-            
-                }).render(paypal.current);
-            }
+        if (inputs.fullname !== '' && inputs.address !== '' && grandTotal > 0) {
+            setPaymentViewed(true)
         }
-    }, [inputs])
+    }, [inputs, grandTotal])
 
-    const __callback = async (callback) => {
-        if (callback.status === 'COMPLETED') {
-            const form = new FormData();
-            form.append('fullname', inputs.fullname)
-            form.append('address', inputs.address)
-            form.append('paid_amount', callback.purchase_units[0].amount.value)
-            form.append('reference_number', callback.id)
-
-            swal({
-                title: "Please give us a moment!",
-                text: "This may take a seconds or minute depending on the size of the data and/or your network connection",
-                icon: "warning",
-                buttons: !1,
-                closeOnClickOutside: !1,
-                closeOnEsc: !1
-            })
-
-            let rqx = await request('POST', `/api/cart/checkout`, form)
-            console.log(rqx);
-            if (rqx.msg == 'success') {
-                swal({
-                    title: "Success!",
-                    text: "Account Configured successfully, We are now processing the delivery",
-                    icon: "success",
-                    buttons: !1,
-                    closeOnClickOutside: !1,
-                    closeOnEsc: !1
-                })
-
-                setTimeout(() => {
-                    window.location.href = '/orders'
-                }, 1000);
-            }
-        }
+    const checkout = () => {
+        console.log(inputs, cart);
+        let ccart = cart.filter(c=>c.checked)
+        history.push(`/cart/checkout?fullname=${encodeURI(inputs.fullname)}&address=${encodeURI(inputs.address)}&cart=${JSON.stringify(ccart)}`)
     }
 
     return (
         <Box p={2} bgcolor="#ffffff" borderRadius={20}>
-            <Box display="flex" justifyContent="space-between" mb={3}>
+            <Box display="flex" justifyContent="space-between" mb={1}>
                 <Box className="f-20"><strong>Checkout Info</strong></Box>
             </Box>
             <Box mb={2} className={classes.search} bgcolor="primary.light" borderRadius={15}>
@@ -129,7 +70,7 @@ export const Payment = ({ grandTotal }) => {
                     root: classes.inputRoot,
                     input: classes.inputInput,
                 }} inputProps={{ 'aria-label': 'Full Name' }}
-                onInput={(e) => setInputs({...inputs, fullname: e.target.value })}
+                onInput={(e) => setInputs({...inputs, fullname: e.target.value})}
                 />
             </Box>
             <Box mb={3} className={classes.search} bgcolor="primary.light" borderRadius={15}>
@@ -138,7 +79,7 @@ export const Payment = ({ grandTotal }) => {
                     root: classes.inputRoot,
                     input: classes.inputInput,
                 }} inputProps={{ 'aria-label': 'Complete Address' }} rows={1} multiline
-                onInput={(e) => setInputs({...inputs, address: e.target.value })}
+                onInput={(e) => setInputs({...inputs, address: e.target.value})}
                 />
             </Box>
             <Box display="flex" justifyContent="space-between" mb={3}>
@@ -146,15 +87,10 @@ export const Payment = ({ grandTotal }) => {
                 <Box className="f-15">PHP{grandTotal.toFixed(2)}</Box>
             </Box>
             <Box display="flex" justifyContent="space-between" mb={3}>
-                <Box className="f-20"><strong>Mode of Payment</strong></Box>
+                <Box className="f-20"><strong></strong></Box>
             </Box>
-            {
-                inputs.fullname !== '' && inputs.address !== '' ? (
-                    <Box ref={paypal} />
-                ) : (
-                    <Box textAlign="center">Please fill-up the name and address first</Box>
-                )
-            }
+            <Box className="c-pointer" p={1} bgcolor="primary.main" color="#ffffff" borderRadius={10} display={paymentViewed ? 'block': 'none'} textAlign="center" onClick={checkout}> Proceed to checkout </Box>
+            <Box display={paymentViewed ? 'none': 'block'} textAlign="center"> Please complete all requirement before we proceed</Box>
         </Box>
     )
 }

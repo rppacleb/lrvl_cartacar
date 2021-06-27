@@ -30,9 +30,11 @@ Route::post('product/create', [AdminController::class, 'prodCreate']);
 Route::post('product/update', [AdminController::class, 'prodUpdate']);
 
 Route::get('cart', [CartController::class, 'cart']);
+Route::get('cart/tocheckout', [CartController::class, 'cartToCheckout']);
 Route::get('cart/count', [CartController::class, 'count']);
 Route::post('cart/create', [CartController::class, 'create']);
 Route::post('cart/checkout', [CartController::class, 'checkout']);
+Route::post('cart/qty/update', [CartController::class, 'cartQtyUpdate']);
 
 Route::get('transactions', [TransactionController::class, 'transactions']);
 Route::post('transaction/status/update', [TransactionController::class, 'statUpdate']);

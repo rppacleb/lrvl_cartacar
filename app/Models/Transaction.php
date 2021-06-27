@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Session;
+use DB;
 
 class Transaction extends Model
 {
@@ -14,9 +15,18 @@ class Transaction extends Model
     public function transactions()
     {
         if (Session::has('aclient')) {
-            return self::orderBy('id', 'DESC')->get();
+            return DB::table('tbl_transaction as t')
+                ->leftJoin('tbl_user as u', 'u.id', 't.user_id')
+                ->orderBy('t.id', 'DESC')
+                ->select('t.id as tid', 't.fullname', 't.address', 't.paid_amount', 't.status', 'u.mobile', 'u.email')
+                ->get();
         } else {
-            return self::where('user_id', session('uclient')['id'])->orderBy('id', 'DESC')->get();
+            return DB::table('tbl_transaction as t')
+                ->leftJoin('tbl_user as u', 'u.id', 't.user_id')
+                ->where('u.id', session('uclient')['id'])
+                ->orderBy('t.id', 'DESC')
+                ->select('t.id as tid', 't.fullname', 't.address', 't.paid_amount', 't.status', 'u.mobile', 'u.email')
+                ->get();
 
         }
     }

@@ -45,11 +45,13 @@ class Cart extends Model
 
     public function checkout($request)
     {
-        $carts = self::where('user_id', session('uclient')['id'])->where('active', 1)->where('is_checkout', 0)->get();
+        $carts = json_decode($request['carts'], true);
 
         $transaction = Transaction::insertGetId([
             'user_id'=>session('uclient')['id'],
             'paid_amount'=>$request['paid_amount'],
+            'fullname'=>$request['fullname'],
+            'address'=>$request['address'],
             'status'=>'for_delivery',
             'reference_number'=>$request['reference_number'],
             'created_at'=>date('Y-m-d H:i:s'),
@@ -58,11 +60,11 @@ class Cart extends Model
         for ($i=0; $i < count($carts); $i++) { 
             TransactionItem::insertGetId([
                 'transaction_id'=>$transaction,
-                'cart_id'=>$carts[$i]->id,
+                'cart_id'=>$carts[$i]['id'],
                 'created_at'=>date('Y-m-d H:i:s'),
             ]);
 
-            self::where('id', $carts[$i]->id)->update([
+            self::where('id', $carts[$i]['id'])->update([
                 'is_checkout'=>1,
                 'updated_at'=>date('Y-m-d H:i:s'),
             ]);
@@ -83,6 +85,21 @@ class Cart extends Model
         ];
     }
 
+    public function cartToCheckout($request)
+    {
+        $c = json_decode($request['carts'], true);
+        $carts = [];
+        for ($i=0; $i < count($c); $i++) { 
+            $cart = self::where('id', $c[$i]['id'])->where('active', 1)->where('is_checkout', 0)->get();
+
+            array_push($carts, $cart[0]);
+        }
+
+        return [
+            'cart'=> $carts
+        ];
+    }
+
     public function count()
     {
         $cart = self::where('user_id', session('uclient')['id'])->where('active', 1)->where('is_checkout', 0)->get(['id', 'quantity']);
@@ -94,6 +111,33 @@ class Cart extends Model
 
         return [
             'count'=> $count
+        ];
+    }
+
+    public function cartQtyUpdate($request)
+    {
+        $cart = self::where('id', $request['cid'])->get(['id', 'quantity', 'active']);
+        if ($request['action'] == 'add') {
+            self::where('id', $request['cid'])->update([
+                'quantity'=>intval($cart[0]->quantity) + 1,
+                'updated_at'=>date('Y-m-d H:i:s')
+            ]);
+        } else if ($request['action'] == 'minus') {
+            if ($cart[0]->quantity == 1) {
+                self::where('id', $request['cid'])->update([
+                    'active'=>0,
+                    'updated_at'=>date('Y-m-d H:i:s')
+                ]);
+            } else {
+                self::where('id', $request['cid'])->update([
+                    'quantity'=>intval($cart[0]->quantity) - 1,
+                    'updated_at'=>date('Y-m-d H:i:s')
+                ]);
+            }
+        }
+
+        return [
+            'msg'=>'success'
         ];
     }
 }

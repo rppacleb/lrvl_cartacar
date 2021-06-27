@@ -17,6 +17,8 @@ class CreateTransactionsTable extends Migration
         Schema::create('tbl_transaction', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->index();
+            $table->string('fullname')->nullable();
+            $table->string('address')->nullable();
             $table->decimal('paid_amount', 10, 2)->nullable();
             $table->string('status')->nullable();
             $table->string('reference_number')->nullable();

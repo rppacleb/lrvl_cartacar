@@ -5,7 +5,7 @@ import { request } from "../../core/request/API"
 export const List = ({ c, auth, __init }) => {
     const submitHandler = async (status) => {
         let form = new FormData()
-        form.append('id', c.id)
+        form.append('id', c.tid)
         form.append('status', status)
         let rqx = await request('POST', '/api/transaction/status/update', form)
         if (rqx.msg === 'success') {
@@ -33,6 +33,13 @@ export const List = ({ c, auth, __init }) => {
 
                     <Box display="flex" alignItems="center" className="f-12">
                         <Box>Total: <strong>PHP{parseFloat(c.paid_amount).toFixed(2)}</strong></Box>
+                    </Box>
+                    <Box mt={2}>
+                        <Box><strong>Buyer Info:</strong></Box>
+                        <Box>{c.fullname}</Box>
+                        <Box>{c.address}</Box>
+                        <Box>{c.email !== null && c.email}</Box>
+                        <Box>{c.mobile !== null && c.mobile}</Box>
                     </Box>
                 </Box>
                 <Box display="flex" alignItems="center">
